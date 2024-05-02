@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './ScrollNavbar.css'; 
+import Logo from './Logo';
+import DropdownMenu from './DropdownMenu';
+import SearchBar from './SearchBar';
+
+
 
 const ScrollNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,11 +29,17 @@ const ScrollNavbar = () => {
 
   return (
     <nav className={`navbar ${isScrolled ? 'visible' : 'hidden'}`}> {/* Apply the appropriate class based on the scroll state */}
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
+       <div className="navbar-left">
+        <SearchBar />  
+      </div>
+      
+      <div className="navbar-center">
+        <Logo />  
+      </div>
+      
+      <div className="navbar-right">
+        <DropdownMenu />  
+      </div>
     </nav>
   );
 };

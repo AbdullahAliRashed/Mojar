@@ -1,26 +1,77 @@
 
 *{
     margin-left: 0;
+   
 }
 @font-face {
     font-family: qersa;  
     src: url('./assets/fonts/Qersa.ttf');  /* Path to the font file */
   }
+@font-face {
+  font-family: josefin;
+  src: url('./assets/fonts/JosefinSans.ttf');
+}
 
 .navbar {
-    
+  height: 70px;
+  padding-bottom: 13px;
+  padding-top: 10px;
     position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     top: 0;
     width: 100%;
-    padding: 0;
     background:linear-gradient(90deg, #043A29, #195E47); /* Background color */
     color: #E5BD7F;
     transition: transform 0.8s ease; /* Smooth transition */
-    font-family: qersa, sans-serif;
-    
+    font-family: qersa; 
+}
+
+.navbar-center{
+  font-size: 20px;
+}
+
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  
+}
+
+
+  .dropdown-menu {
+display: flex;
+position: relative;
+justify-content: flex-end;  
+color: #E5BD7F;
+font-size: 11px;
+font-family: josefin;
 
 }
+
+.dropdown-icon {
+  border: none;
+  background: none;
+  cursor: pointer;
   
+  color: #E5BD7F;
+font-size: 11px;
+font-family: josefin;
+}
+
+.search-bar {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none; 
+  font-size: 11px;
+  font-family: josefin;
+}
+
+
   .navbar.hidden {
     transform: translateY(-100%); /* Hide the navbar when not scrolled */
   }
@@ -29,12 +80,5 @@
     transform: translateY(0); /* Show the navbar when scrolled */
   }
   
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-  }
+ 
   
-  .navbar li {
-    cursor: pointer;
-  }

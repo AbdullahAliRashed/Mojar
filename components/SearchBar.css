@@ -1,0 +1,18 @@
+.search-button {
+    display: flex; 
+    align-items: center;  
+    cursor: pointer;  
+    font-size: 16px;  
+    padding: 5px 10px;  
+    border-radius: 5px;  
+    font-size: 11px;
+    font-family: josefin;
+  }
+  
+ 
+  
+  .search-icon {
+    font-size: 11px;
+    font-family: josefin;
+    margin-left: 5px; 
+  }
