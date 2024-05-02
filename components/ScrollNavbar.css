@@ -1,0 +1,40 @@
+
+*{
+    margin-left: 0;
+}
+@font-face {
+    font-family: qersa;  
+    src: url('./assets/fonts/Qersa.ttf');  /* Path to the font file */
+  }
+
+.navbar {
+    
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    background:linear-gradient(90deg, #043A29, #195E47); /* Background color */
+    color: #E5BD7F;
+    transition: transform 0.8s ease; /* Smooth transition */
+    font-family: qersa, sans-serif;
+    
+
+}
+  
+  .navbar.hidden {
+    transform: translateY(-100%); /* Hide the navbar when not scrolled */
+  }
+  
+  .navbar.visible {
+    transform: translateY(0); /* Show the navbar when scrolled */
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .navbar li {
+    cursor: pointer;
+  }
