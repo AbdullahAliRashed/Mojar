@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrollNavbar from './components/ScrollNavbar';
+import ScrollNavbar from './components/Navbar/ScrollNavbar';
 
 const App = () => {
   return (
