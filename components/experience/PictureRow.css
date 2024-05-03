@@ -1,0 +1,57 @@
+@font-face {
+  font-family: josefin;
+  src: url('../../assets/fonts/JosefinSans.ttf');
+}
+
+.picture-row {
+  display: flex;          /* Enables Flexbox layout */
+  width: 100%;           /* Fixed width for the container */
+  height: 90%;      /* Fixed height for the container */
+  gap: 0;                 /* No space between items */
+  overflow: hidden;       /* Avoid overflow */
+  padding: 40px;
+  background-color: #F4DCBD;
+}
+.pictureContainer{
+  position: relative;
+  max-width: 25%;
+  flex: 1;
+
+  
+}
+.picture {
+  animation: fadeIn 5s;
+  display: block;               /* Ensures all images have equal width */
+  width: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease ;
+
+}
+
+.picture:hover {
+  transform: scale(1.10);  
+  transition: transform 1.5s ease;
+  
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.clickable-text {
+  font-family: josefin,sans-serif;
+  font-weight: bold;
+ 
+  color: #F4DCBD;  
+ 
+  
+  cursor: pointer;  
+  z-index: 1.5;
+  left: 0;
+    position:absolute;
+    text-align:center;
+   top:150px;
+    width: 100%
+}
