@@ -1,0 +1,66 @@
+@font-face {
+    font-family: qersa;  
+    src: url('./assets/fonts/Qersa.ttf');  /* Path to the font file */
+  }
+@font-face {
+  font-family: josefin;
+  src: url('./assets/fonts/JosefinSans.ttf');
+}
+
+.customization-container {
+    position: relative;
+    width: 100%;
+    max-width: 1300px; /* Maximum width of 1300px */
+    height: 300px; /* Set your desired height */
+    background-color: #043A29; /* Adjusted background color */
+    padding: 20px; /* Adjusted padding */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    margin: 0 auto; /* Center the container */
+    padding-top: 200px;
+    padding-top: 200px;
+    margin-top: 100px;
+  }
+  
+  .title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 25px; /* Adjust as needed */
+    font-weight: 800;
+    color: #E5BD7F;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.2s; /* Fade in 0.2s after container */
+    font-family: qersa;
+  }
+  
+  .description {
+    position: absolute;
+    font-weight: 600px;
+    font-size: 20px;
+    color: #E5BD7F;
+    width: 50%;
+    top: 200px;
+    left: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.4s; /* Fade in 0.4s after container */
+    font-family: josefin;
+  }
+  
+  .right-image1 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 700px; /* Adjusted image size */
+    transition: opacity 0.5s ease-in-out 0.6s; /* Fade in 0.6s after container */
+  }
+  
+  .customization-container.visible {
+    opacity: 1;
+  }
+  
+  .customization-container.visible .title,
+  .customization-container.visible .description {
+    opacity: 1;
+  }
+  

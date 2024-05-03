@@ -1,0 +1,43 @@
+body {
+  background-image: url('./components/Pics/Screenshot 2024-05-04 013725.png'); /* Replace 'path/to/your/image.jpg' with the path to your image */
+  background-repeat: repeat-y;
+  background-size: 100% auto; /* This will repeat the image both horizontally and vertically */
+  /* You can also use 'repeat-x' to repeat only horizontally or 'repeat-y' to repeat only vertically */
+}
+.sliding-images-container {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 110px - 150px); /* Adjusted for padding */
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 200px;
+    margin-top: 100px;
+    background-color: transparent;
+  }
+  
+  .image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .left-image {
+    left: -342px; /* Adjusted for padding */
+  }
+  
+  .right-image {
+    right: -330px; /* Adjusted for padding */
+  }
+  
+  .sliding-images-container.visible .left-image {
+    opacity: 1;
+    transform: translateX(50%);
+    
+  }
+  
+  .sliding-images-container.visible .right-image {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
