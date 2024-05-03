@@ -10,7 +10,7 @@
   gap: 0;                 /* No space between items */
   overflow: hidden;       /* Avoid overflow */
   padding: 40px;
-  background-color: #F4DCBD;
+  background-color: transparent;
 }
 .pictureContainer{
   position: relative;
