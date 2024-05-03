@@ -1,0 +1,163 @@
+
+
+*, *:focus, *:active {
+    outline: none;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+@font-face {
+    font-family: qersa;  
+    src: url('./assets/fonts/Qersa.ttf');  /* Path to the font file */
+  }
+@font-face {
+  font-family: josefin;
+  src: url('./assets/fonts/JosefinSans.ttf');
+}
+
+@media (max-width: 1300px) {
+    .max-width-4 {
+        max-width: 90%;
+    }
+}
+.section--about-papazian__content {
+    padding-top: 110px;
+    padding-bottom: 150px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.max-width-4 {
+    max-width: 1300px;
+}
+*, *:focus, *:active {
+    outline: none;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.title--small {
+    font-family: qersa;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #E5BD7F;
+}
+
+.title--big {
+    font-family: qersa;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 200;
+    color: #E5BD7F;
+}
+
+.mb4 {
+    margin-bottom: 4rem;
+}
+.mt3 {
+    margin-top: 2rem;
+}
+*, *:focus, *:active {
+    outline: none;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+.bg-olive {
+    background-image: linear-gradient(to bottom, #043A29, #195E47);
+}
+.center {
+    text-align: center;
+}
+@media (min-width: 960px) {
+    .lg-col-8 {
+        width: 66.66667%;
+    }
+}
+
+.col-10 {
+    width: 83.33333%;
+}
+.home-about-column {
+    font-size: 12px;
+}
+.lh {
+    line-height: 2rem;
+}
+.home-about-column--right {
+    padding-bottom: 120px;
+}
+
+.home-about-column {
+    font-size: 12px;
+}
+.lh {
+    line-height: 2rem;
+}
+.gotham {
+    font-family: josefin;
+    font-style: normal;
+    font-weight: 800;
+    color: #E5BD7F;
+}
+.border-silver {
+    border-color: #a29fa0;
+}
+.border-left {
+    border-left-style: solid;
+    border-left-width: 1px;
+}
+@media (min-width: 640px) {
+    .md-col-6 {
+        width: 50%;
+    }
+}
+@media (min-width: 640px) {
+    .md-col {
+        float: left;
+        box-sizing: border-box;
+    }
+}
+.px3 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.button--dark {
+    background-color: #043A29;
+    box-sizing: border-box;
+    color: #dfd8d2;
+    display: inline-block;
+    line-height: 1;
+    letter-spacing: 2px;
+    padding: 20px;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    vertical-align: middle;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.button--light, .button--orange, .button--dark {
+    min-width: 230px;
+}
+.title-center {
+    font-family: qersa;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
