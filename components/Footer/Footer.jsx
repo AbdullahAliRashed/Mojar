@@ -37,18 +37,39 @@ const Footer = () => {
         <div className={`footer-section about ${isVisibleAbout ? 'visible' : ''}`}>
         <h3 style={{ fontSize: '36px', fontWeight: 'bold' }}>MOJAR</h3>
         <div className='About-details'>
-          <p>Description</p>
-          <p>Work Times</p>
-          <p>Location</p>
-          <p>Number</p>
-          <p>Email</p>
+          <p>Discover the joy of self-expression and timeless beauty with us</p>
+          <p>Open for you serviece from 8 AM to 8 PM</p>
+          <p>El Rehab city, El Rehab Mall 2, Second Floor, Shop Nr. 153</p>
+          <p>+0201010054097</p>
+          <p>Mojarjewlery@Mojar.com</p>
           </div>
         </div>
         <div className={`footer-section contact-form ${isVisibleContact ? 'visible' : ''}`}>
-        <h3 style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'josefin' }}>Subscribe to Newsletter</h3>
-        <form style={{ display: 'flex', flexDirection: 'column' }}>
-            <input type="email" name="email" placeholder="Your Email" style={{ width: 'calc(100% - 40px)', padding: '15px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' }} />
-            <button type="submit" className='Submit-footer' style={{width:'100px', backgroundColor: '#195E47', color: '#E5BD7F', border: 'none', padding: '15px 20px', cursor: 'pointer', borderRadius: '5px', marginTop: '10px' }}>Register</button>
+        <div>
+          <h3 style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'josefin' }}>SUBSCRIBE TO</h3>
+          <span style={{ fontSize: '20px', fontWeight: 'bold', fontFamily: 'josefin', marginBottom: '10px' }}>NEWSLETTER</span>
+        </div>
+
+        <form style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Your Email" 
+            className="inputField"
+          />
+          <button 
+            type="submit" 
+            className='Submit-footer' 
+            style={{ 
+              width: '100px', 
+              backgroundColor: '#195E47', 
+              color: '#E5BD7F', 
+              padding: '15px 20px', 
+              cursor: 'pointer', 
+              borderRadius: '5px', 
+              marginTop: '10px' 
+            }}>Register
+          </button>
         </form>
         </div>
       </div>

@@ -28,7 +28,8 @@ const ScrollNavbar = () => {
   }, []); // Only run the effect on mount and unmount
 
   return (
-    <nav className={`navbar ${isScrolled ? 'visible' : 'hidden'}`}> {/* Apply the appropriate class based on the scroll state */}
+    // <nav className={`navbar ${isScrolled ? 'visible' : 'hidden'}`}>
+    <nav className={`navbar`}> 
        <div className="navbar-left">
         <SearchBar />  
       </div>

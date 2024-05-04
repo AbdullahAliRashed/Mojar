@@ -24,12 +24,12 @@ body {
   }
   
   .left-image {
-    left: 6px; /* Adjusted for padding */
+    left: 1px; /* Adjusted for padding */
     width: 500px;
   }
   
   .right-image {
-    right: 6px; /* Adjusted for padding */
+    right: 19px; /* Adjusted for padding */
     width: 500px;
   }
   

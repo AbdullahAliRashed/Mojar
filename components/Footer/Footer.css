@@ -25,6 +25,20 @@ body, html {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.inputField {
+    width: calc(100% - 40px);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #E5BD7F; /* border color */
+    background-color: #195E47; /* input field background color */
+    color: #fff; /* input text color */
+  }
+  
+  .inputField::placeholder {
+    color: #E5BD7F; /* placeholder color */
+  }
+
 .footer-section.about.visible {
     transform: translate(60px, -20px);
 }
@@ -34,6 +48,7 @@ body, html {
 
 .Submit-footer{
     transition:transform 0.3s ease-in-out;
+    border: 1px solid #E5BD7F;
 }
 
 .Submit-footer:hover {

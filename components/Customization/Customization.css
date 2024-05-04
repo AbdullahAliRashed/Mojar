@@ -15,11 +15,10 @@
     background-color: #043A29; /* Adjusted background color */
     padding: 20px; /* Adjusted padding */
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
     margin: 0 auto; /* Center the container */
     padding-top: 200px;
-    padding-top: 200px;
-    margin-top: 100px;
+    /* margin-top: 100px; */
   }
   
   .title {
@@ -30,7 +29,7 @@
     font-weight: 800;
     color: #E5BD7F;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out 0.2s; /* Fade in 0.2s after container */
+    transition: opacity 0.2s ease-in-out 0.1s; /* Fade in 0.2s after container */
     font-family: qersa;
   }
   
@@ -43,7 +42,7 @@
     top: 200px;
     left: 20px;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out 0.4s; /* Fade in 0.4s after container */
+    transition: opacity 0.2s ease-in-out 0.1s; /* Fade in 0.4s after container */
     font-family: josefin;
   }
 
@@ -54,12 +53,13 @@
     background-color: #195E47;
     color: #E5BD7F;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid #E5BD7F;
     font-size: 18px;
+    border-radius: 5px;
     cursor: pointer;
     opacity: 0;
     font-family: josefin;
-    transition: opacity 0.5s ease-in-out 0.6s, transform 0.3s ease-in-out; /* Fade in 0.6s after container */
+    transition: opacity 0.2s ease-in-out 0.3s, transform 0.1s ease-in-out; /* Fade in 0.6s after container */
   }
   
   .custom-button:hover {
@@ -71,7 +71,7 @@
     top: 20px;
     right: -30px;
     width: 700px; /* Adjusted image size */
-    transition: opacity 0.5s ease-in-out 0.6s; /* Fade in 0.6s after container */
+    transition: opacity 0.2s ease-in-out 0.3s; /* Fade in 0.6s after container */
   }
   
   .customization-container.visible {
