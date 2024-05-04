@@ -1,0 +1,23 @@
+.vidContainer{
+    
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:  700px;
+    margin-top: 30px;
+  }
+
+.LoopingV {
+   padding-top: 20px;
+   padding-bottom: 20px;
+    
+    margin-left: 50px; 
+    position: absolute;
+    width: 92%;
+    height: 100%;
+    scale: 98%;
+    object-fit: cover; 
+    
+    
+  }
+

@@ -3,12 +3,17 @@
 *, *:focus, *:active {
     outline: none;
 }
+
+
 user agent stylesheet
 div {
     display: block;
     unicode-bidi: isolate;
 }
-
+.big-container{
+    display: block;
+    
+}
 @font-face {
     font-family: qersa;  
     src: url('./assets/fonts/Qersa.ttf');  /* Path to the font file */
@@ -24,13 +29,15 @@ div {
     }
 }
 .section--about-papazian__content {
+    display: block;
     padding-top: 110px;
     padding-bottom: 150px;
+    
 }
 
 .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 .max-width-4 {
     max-width: 1300px;

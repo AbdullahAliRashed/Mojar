@@ -17,6 +17,9 @@ const Craftsmanship = () => {
     // </div>
     // </div>
 
+    <div className='big-container'>
+
+
     <div className="section--about-papazian__content max-width-4 mx-auto bg-olive">
   <div className="col-10 lg-col-8 mx-auto">
     <div className="center">
@@ -41,21 +44,22 @@ const Craftsmanship = () => {
              and allow us to enhance your special occasions with timeless beauty.</p>
      </div>
       </div>
-    </div>
+    
 
     {/* <div className="centered-column md-col px3 gotham lh">
         <div className="title-center">Experience</div>
         <p>Indulge in the bespoke experience at Mojar where luxury meets personalization. Our attentive team guides you through a world of exquisite craftsmanship and curated collections, ensuring each piece becomes a cherished part of your story. </p>
         <p style={{ color: "#043A29" }}><strong>Discover the joy of self-expression and timeless beauty with us.</strong></p>
-    </div> */}
+      </div> */}
 
     <div className="center">
       <a href="https://www.papazian.gr/about/" className="button--dark">ABOUT US</a>
     </div>
   </div>
 </div>
-
+</div>
     
+      </div>
   );
 };
 

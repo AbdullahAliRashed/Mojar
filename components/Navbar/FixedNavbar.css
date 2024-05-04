@@ -1,0 +1,75 @@
+/* *{
+    margin-left: 0;
+   
+} */
+@font-face {
+    font-family: qersa;  
+    src: url('./assets/fonts/Qersa.ttf');  /* Path to the font file */
+  }
+  
+@font-face {
+  font-family: josefin;
+  src: url('./assets/fonts/JosefinSans.ttf');
+}
+
+.FixedNavbar {
+    
+  height: 70px;
+  border: 10px;
+  border-color: black;
+  padding-bottom: 13px;
+  padding-top: 10px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    background:transparent;
+    color: black;
+    transition: transform 0.8s ease; /* Smooth transition */
+    font-family: qersa; 
+   
+}
+
+.center{
+  font-size: 20px;
+}
+
+
+.left,.center,.right {
+  display: flex;
+  align-items: center;
+  
+}
+
+
+  .dropdown-menu {
+display: flex;
+position: relative;
+justify-content: flex-end;  
+color: black;
+font-size: 11px;
+font-family: josefin;
+
+}
+
+.dropdown-icon {
+  border: none;
+  background: none;
+  cursor: pointer;
+  
+  color: black;
+font-size: 11px;
+font-family: josefin;
+}
+
+.search-bar {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none; 
+  font-size: 11px;
+  font-family: josefin;
+}

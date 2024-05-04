@@ -5,7 +5,7 @@
 
 .picture-row {
   display: flex;          /* Enables Flexbox layout */
-  width: 100%;           /* Fixed width for the container */
+  width: 91%;           /* Fixed width for the container */
   height: 90%;      /* Fixed height for the container */
   gap: 0;                 /* No space between items */
   overflow: hidden;       /* Avoid overflow */

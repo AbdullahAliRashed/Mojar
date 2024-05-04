@@ -5,8 +5,10 @@ body {
   /* You can also use 'repeat-x' to repeat only horizontally or 'repeat-y' to repeat only vertically */
 }
 .sliding-images-container {
+  
     position: relative;
     width: 100vw;
+    scale: 94%;
     height: calc(100vh - 110px - 150px); /* Adjusted for padding */
     overflow: hidden;
     padding-top: 100px;
