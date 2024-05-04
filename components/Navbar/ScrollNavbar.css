@@ -26,6 +26,7 @@
     color: #E5BD7F;
     transition: transform 0.8s ease; /* Smooth transition */
     font-family: qersa; 
+    z-index: 2;
 }
 
 .navbar-center{

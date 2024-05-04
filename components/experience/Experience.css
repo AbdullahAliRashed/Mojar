@@ -1,0 +1,7 @@
+.Experience{
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: stretch;    /* Center content vertically */
+    
+
+}

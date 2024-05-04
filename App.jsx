@@ -18,9 +18,8 @@ const App = () => {
 
 
       <div style={{ height: '2000px' }}> {/* Example content to allow scrolling */}
-        <h1>Welcome to My Website</h1>
-        <p>Scroll to see the navbar in action.</p>
       </div>
+
     </div>
   );
 };
