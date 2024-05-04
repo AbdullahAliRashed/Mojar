@@ -37,6 +37,7 @@ const Customization = () => {
        We guarantee that every custom piece embodies your personal style and becomes a cherished family heirloom,
        thanks to our meticulous attention to detail and top-notch craftsmanship.</div>
       <img className="right-image1" src={rightImage1} alt="RightImage" />
+      <button className="custom-button">Customize Here</button>
     </div>
   );
 };

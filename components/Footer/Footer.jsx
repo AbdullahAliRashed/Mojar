@@ -1,34 +1,59 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './Footer.css'; // Import your CSS file for styling
 
 const Footer = () => {
+  const footerRef = useRef(null);
+  const [isVisibleAbout, setIsVisibleAbout] = useState(false);
+  const [isVisibleContact, setIsVisibleContact] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.target === footerRef.current) {
+            if (entry.isIntersecting) {
+              setIsVisibleAbout(true);
+              setIsVisibleContact(true);
+            } else {
+              setIsVisibleAbout(false);
+              setIsVisibleContact(false);
+            }
+          }
+        });
+      },
+      { threshold: 0.5 } // Change this threshold as needed
+    );
+
+    observer.observe(footerRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <footer className="footer">
+    <footer className="footer" ref={footerRef}>
       <div className="footer-content">
-        <div className="footer-section about">
-          <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+        <div className={`footer-section about ${isVisibleAbout ? 'visible' : ''}`}>
+        <h3 style={{ fontSize: '36px', fontWeight: 'bold' }}>MOJAR</h3>
+        <div className='About-details'>
+          <p>Description</p>
+          <p>Work Times</p>
+          <p>Location</p>
+          <p>Number</p>
+          <p>Email</p>
+          </div>
         </div>
-        <div className="footer-section links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div className="footer-section contact-form">
-          <h3>Contact Us</h3>
-          <form>
-            <input type="email" name="email" placeholder="Your Email" />
-            <textarea name="message" placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-          </form>
+        <div className={`footer-section contact-form ${isVisibleContact ? 'visible' : ''}`}>
+        <h3 style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'josefin' }}>Subscribe to Newsletter</h3>
+        <form style={{ display: 'flex', flexDirection: 'column' }}>
+            <input type="email" name="email" placeholder="Your Email" style={{ width: 'calc(100% - 40px)', padding: '15px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' }} />
+            <button type="submit" className='Submit-footer' style={{width:'100px', backgroundColor: '#195E47', color: '#E5BD7F', border: 'none', padding: '15px 20px', cursor: 'pointer', borderRadius: '5px', marginTop: '10px' }}>Register</button>
+        </form>
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; 2024 Your Company | All rights reserved
+        &copy; {new Date().getFullYear()} Your Company | All rights reserved
       </div>
     </footer>
   );

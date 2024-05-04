@@ -1,58 +1,84 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body and html fill the entire viewport */
+}
+
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #043A29;
+    color: #E5BD7F;
     padding: 50px 0;
-  }
-  
-  .footer-content {
+    font-family: josefin;
+}
+
+.footer-content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-  }
-  
-  .footer-section {
+}
+
+.footer-section {
     flex: 1;
     padding: 0 20px;
     margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.footer-section.about.visible {
+    transform: translate(60px, -20px);
+}
+.About-details {
+    transform: translate(20px, -10px); /* Adjust these values as needed */
+}
+
+.Submit-footer{
+    transition:transform 0.3s ease-in-out;
+}
+
+.Submit-footer:hover {
+    transform: scale(1.05); /* Adjust the scale factor as needed */
   }
-  
-  .footer-section h3 {
+
+.footer-section.visible {
+    opacity: 1;
+}
+
+.footer-section.hidden {
+    display: none;
+}
+
+.footer-section h3 {
     margin-bottom: 10px;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section.newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section.newsletter input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-  }
-  
-  .contact-form button {
+}
+
+.footer-section.newsletter button {
     background-color: #fff;
     color: #333;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-  }
-  
-  .footer-bottom {
-    background-color: #222;
+}
+
+.footer-bottom {
+    background-color: #195E47;
     padding: 10px 0;
     text-align: center;
     font-size: 14px;
-  }
-  
+}

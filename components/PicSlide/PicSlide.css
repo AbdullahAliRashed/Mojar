@@ -6,8 +6,8 @@ body {
 }
 .sliding-images-container {
     position: relative;
-    width: 100vw;
-    height: calc(100vh - 110px - 150px); /* Adjusted for padding */
+    width: 100%;
+    height: 500px ;/* Adjusted for padding */
     overflow: hidden;
     padding-top: 100px;
     padding-bottom: 200px;
@@ -24,11 +24,13 @@ body {
   }
   
   .left-image {
-    left: -342px; /* Adjusted for padding */
+    left: 6px; /* Adjusted for padding */
+    width: 500px;
   }
   
   .right-image {
-    right: -330px; /* Adjusted for padding */
+    right: 6px; /* Adjusted for padding */
+    width: 500px;
   }
   
   .sliding-images-container.visible .left-image {

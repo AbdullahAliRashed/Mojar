@@ -15,11 +15,6 @@ const App = () => {
       <PicSlide/>
       <Footer/>
 
-
-
-      <div style={{ height: '2000px' }}> {/* Example content to allow scrolling */}
-      </div>
-
     </div>
   );
 };

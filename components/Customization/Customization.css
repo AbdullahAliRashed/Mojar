@@ -24,7 +24,7 @@
   
   .title {
     position: absolute;
-    top: 20px;
+    top: 60px;
     left: 20px;
     font-size: 25px; /* Adjust as needed */
     font-weight: 800;
@@ -46,11 +46,30 @@
     transition: opacity 0.5s ease-in-out 0.4s; /* Fade in 0.4s after container */
     font-family: josefin;
   }
+
+  .custom-button {
+    position: absolute;
+    bottom: 60px;
+    left: 25%;
+    background-color: #195E47;
+    color: #E5BD7F;
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0;
+    font-family: josefin;
+    transition: opacity 0.5s ease-in-out 0.6s, transform 0.3s ease-in-out; /* Fade in 0.6s after container */
+  }
+  
+  .custom-button:hover {
+    transform: scale(1.05); /* Adjust the scale factor as needed */
+  }
   
   .right-image1 {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: -30px;
     width: 700px; /* Adjusted image size */
     transition: opacity 0.5s ease-in-out 0.6s; /* Fade in 0.6s after container */
   }
@@ -60,7 +79,8 @@
   }
   
   .customization-container.visible .title,
-  .customization-container.visible .description {
+  .customization-container.visible .description,
+  .customization-container.visible .custom-button {
     opacity: 1;
   }
   
