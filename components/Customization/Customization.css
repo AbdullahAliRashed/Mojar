@@ -10,8 +10,8 @@
 .customization-container {
     position: relative;
     width: 100%;
-    max-width: 1300px; /* Maximum width of 1300px */
-    height: 300px; /* Set your desired height */
+    max-width: 1250px; /* Maximum width of 1300px */
+    height: 250px; /* Set your desired height */
     background-color: #043A29; /* Adjusted background color */
     padding: 20px; /* Adjusted padding */
     opacity: 0;
@@ -23,8 +23,8 @@
   
   .title {
     position: absolute;
-    top: 60px;
-    left: 20px;
+    top: 50px;
+    left: 50px;
     font-size: 25px; /* Adjust as needed */
     font-weight: 800;
     color: #E5BD7F;
@@ -39,28 +39,37 @@
     font-size: 20px;
     color: #E5BD7F;
     width: 50%;
-    top: 200px;
-    left: 20px;
+    top: 130px;
+    left: 50px;
     opacity: 0;
     transition: opacity 0.2s ease-in-out 0.1s; /* Fade in 0.4s after container */
     font-family: josefin;
+    text-align: justify; /* Align text to justify */
+    line-height: 1.5;
   }
 
   .custom-button {
     position: absolute;
     bottom: 60px;
+    box-sizing: border-box;
     left: 25%;
-    background-color: #195E47;
+    background-color: #195E47; /* Match the background color of .button--dark */
     color: #E5BD7F;
-    padding: 10px 20px;
-    border: 1px solid #E5BD7F;
-    font-size: 18px;
-    border-radius: 5px;
+    padding: 20px; /* Increase padding to match .button--dark */
+    font-size: 16px; /* Adjust font size to match .button--dark */
+    text-align: center; /* Center-align the text */
+    line-height: 1; /* Set line-height to 1 */
+    letter-spacing: 2px;
     cursor: pointer;
+    border-radius: 8px;
     opacity: 0;
     font-family: josefin;
-    transition: opacity 0.2s ease-in-out 0.3s, transform 0.1s ease-in-out; /* Fade in 0.6s after container */
-  }
+    transition: opacity 0.2s ease-in-out 0.3s, transform 0.3s ease-in-out;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
   
   .custom-button:hover {
     transform: scale(1.05); /* Adjust the scale factor as needed */
@@ -68,8 +77,8 @@
   
   .right-image1 {
     position: absolute;
-    top: 20px;
-    right: -30px;
+    top: -20px;
+    right: -90px;
     width: 700px; /* Adjusted image size */
     transition: opacity 0.2s ease-in-out 0.3s; /* Fade in 0.6s after container */
   }

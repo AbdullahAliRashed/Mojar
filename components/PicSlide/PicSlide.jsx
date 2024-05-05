@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import './PicSlide.css'; // Import your CSS file for styling
-import leftImage from '.././Pics/Image1.jpeg'; // Import your left image
-import rightImage from '.././Pics/Henriette - Large ring.jpeg'; // Import your right image
-import rightImage1 from '.././Pics/MOJARM4.png'; // Import your right image
+import './PicSlide.css';
+import leftImage from '.././Pics/Image1.jpeg';
+import rightImage from '.././Pics/Henriette - Large ring.jpeg';
 
 const PicSlide = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,17 +20,35 @@ const PicSlide = () => {
       }
     };
 
+    const handleVisibilityChange = () => {
+      if (!isVisible) {
+        setShowText(true); // If sliding animation is complete, show the text
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [isVisible]);
 
   return (
     <div className={`sliding-images-container ${isVisible ? 'visible' : ''}`}>
-      <img className="image left-image" src={leftImage} alt="Left Image" />
-      <img className="image right-image" src={rightImage} alt="Right Image" />
+      <div className="image-container">
+        <img className="image left-image" src={leftImage} alt="Left Image" />
+      </div>
+      <div className="image-container">
+        <img className="image right-image" src={rightImage} alt="Right Image" />
+      </div>
+      {showText && ( // Render the text only when showText is true
+        <div className="text-container">
+          <h1 className="big-text">NEW COLLECTION</h1>
+          <p className="shop-text">Shop Here</p>
+        </div>
+      )}
     </div>
   );
 };

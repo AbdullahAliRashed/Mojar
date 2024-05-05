@@ -1,45 +1,96 @@
 body {
-  background-image: url('./components/Pics/Screenshot 2024-05-04 013725.png'); /* Replace 'path/to/your/image.jpg' with the path to your image */
+  background-image: url('./components/Pics/Screenshot 2024-05-04 013725.png');
   background-repeat: repeat-y;
-  background-size: 100% auto; /* This will repeat the image both horizontally and vertically */
-  /* You can also use 'repeat-x' to repeat only horizontally or 'repeat-y' to repeat only vertically */
+  background-size: 100% auto;
 }
+
 .sliding-images-container {
-    position: relative;
-    width: 100%;
-    height: 500px ;/* Adjusted for padding */
-    overflow: hidden;
-    padding-top: 100px;
-    padding-bottom: 200px;
-    margin-top: 100px;
-    background-color: transparent;
-  }
-  
-  .image {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  }
-  
-  .left-image {
-    left: 1px; /* Adjusted for padding */
-    width: 500px;
-  }
-  
-  .right-image {
-    right: 19px; /* Adjusted for padding */
-    width: 500px;
-  }
-  
-  .sliding-images-container.visible .left-image {
-    opacity: 1;
-    transform: translateX(50%);
-    
-  }
-  
-  .sliding-images-container.visible .right-image {
-    opacity: 1;
-    transform: translateX(-50%);
-  }
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  margin-top: 100px;
+  background-color: transparent;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0; /* Initially set opacity to 0 */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.left-image {
+  left: 86px;
+  width: 500px;
+}
+
+.right-image {
+  right: 103px;
+  width: 500px;
+}
+
+.sliding-images-container.visible .left-image,
+.sliding-images-container.visible .right-image {
+  opacity: 1; /* Show the images when the container is visible */
+}
+
+.sliding-images-container.visible .left-image {
+  transform: translateX(50%);
+}
+
+.sliding-images-container.visible .right-image {
+  transform: translateX(-50%);
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.sliding-images-container:hover .image {
+  opacity: 0.7; /* Decrease opacity on hover */
+}
+
+.sliding-images-container:hover .text-container {
+  transform: translate(-50%, -50%) scale(1.1); /* Scale up text on hover */
+}
+
+.big-text,
+.shop-text {
+  opacity: 0; /* Initially hide the text */
+  transition: opacity 0.5s ease-in-out; /* Add transition for opacity */
+}
+
+.sliding-images-container.visible .big-text,
+.sliding-images-container.visible .shop-text {
+  opacity: 1; /* Show the text when the container is visible */
+}
+
+.sliding-images-container:not(.visible) .big-text,
+.sliding-images-container:not(.visible) .shop-text {
+  opacity: 0; /* Hide the text when the container is not visible */
+  transition-delay: 0s; /* No delay when sliding out */
+}
+
+.sliding-images-container.visible .big-text,
+.sliding-images-container.visible .shop-text {
+  transition-delay: 0.5s; /* Add a delay of 1 second when sliding in */
+}
+
+.big-text {
+  font-size: 3em;
+  font-weight: bolder;
+}
+
+.shop-text {
+  font-size: 1.5em;
+  font-weight: bold;
+}

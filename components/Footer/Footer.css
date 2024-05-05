@@ -7,8 +7,10 @@ body, html {
 .footer {
     background-color: #043A29;
     color: #E5BD7F;
-    padding: 50px 0;
+    padding: 10px 0;
     font-family: josefin;
+    overflow-x: hidden;
+
 }
 
 .footer-content {
@@ -40,15 +42,30 @@ body, html {
   }
 
 .footer-section.about.visible {
-    transform: translate(60px, -20px);
+    transform: translate(180px, -15px);
+
 }
-.About-details {
-    transform: translate(20px, -10px); /* Adjust these values as needed */
-}
+
 
 .Submit-footer{
     transition:transform 0.3s ease-in-out;
-    border: 1px solid #E5BD7F;
+    background-color: #043A29;
+    box-sizing: border-box;
+    color: #E5BD7F;
+    display: inline-block;
+    padding: 20px; /* Increase padding to match .button--dark */
+    font-size: 16px; /* Adjust font size to match .button--dark */
+    text-align: center; /* Center-align the text */
+    line-height: 1; /* Set line-height to 1 */
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: josefin;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 45%;
 }
 
 .Submit-footer:hover {
@@ -97,3 +114,20 @@ body, html {
     text-align: center;
     font-size: 14px;
 }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px; /* Center the icons horizontally */
+  }
+  
+  .social-icons a {
+    margin: 0 10px; /* Add spacing between the icons */
+  }
+  
+  .social-icons a:first-child {
+    margin-left: 0; /* Remove left margin for the first icon */
+  }
+  
+  .social-icons a:last-child {
+    margin-right: 0; /* Remove right margin for the last icon */
+  }

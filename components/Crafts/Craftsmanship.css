@@ -93,6 +93,8 @@ div {
 }
 .home-about-column {
     font-size: 12px;
+    text-align: justify; /* Align text to justify */
+    line-height: 1.5; /* Adjust line height for spacing */
 }
 .lh {
     line-height: 2rem;
@@ -101,16 +103,13 @@ div {
     padding-bottom: 120px;
 }
 
-.home-about-column {
-    font-size: 12px;
-}
 .lh {
     line-height: 2rem;
 }
 .gotham {
     font-family: josefin;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     color: #E5BD7F;
 }
 .border-silver {
@@ -138,7 +137,7 @@ div {
 .button--dark {
     background-color: #043A29;
     box-sizing: border-box;
-    color: #dfd8d2;
+    color: #E5BD7F;
     display: inline-block;
     line-height: 1;
     letter-spacing: 2px;
@@ -149,7 +148,13 @@ div {
     vertical-align: middle;
     margin-top: 10px;
     text-decoration: none;
+    border-radius: 8px;
+    transition:transform 0.3s ease-in-out;
 }
+
+.button--dark:hover {
+    transform: scale(1.05); /* Adjust the scale factor as needed */
+  }
 
 .button--light, .button--orange, .button--dark {
     min-width: 230px;

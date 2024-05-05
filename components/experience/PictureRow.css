@@ -3,55 +3,187 @@
   src: url('../../assets/fonts/JosefinSans.ttf');
 }
 
+@font-face {
+  font-family: lux;
+  src: url('../../assets/fonts/Voguella.ttf');
+}
+
 .picture-row {
-  display: flex;          /* Enables Flexbox layout */
-  width: 100%;           /* Fixed width for the container */
-  height: 90%;      /* Fixed height for the container */
-  gap: 0;                 /* No space between items */
-  overflow: hidden;       /* Avoid overflow */
-  padding: 40px;
+  display: flex;
+  flex-wrap: wrap; /* Allows for wrapping of items on smaller screens */
+  justify-content: center; /* Centers the content */
+  width: 100%; /* Changed to 100% for responsive layout */
+  height: auto; /* Adjust height based on content */
+  gap: 20px; /* Space between items */
+  overflow: hidden; /* Prevent overflow */
+  padding: 20px; /* Reduced padding for smaller screens */
   background-color: transparent;
 }
-.pictureContainer{
-  position: relative;
-  max-width: 25%;
-  flex: 1;
 
-  
+
+.pictureContainer:hover .text-container { /* Change here */
+  opacity: 1;
 }
+
+
+.pictureContainer {
+  position: relative;
+  flex: 1;
+  max-width: 25%; /* Allow four pictures in a row by default */
+  transition: transform 1.5s ease;
+}
+
 .picture {
   animation: fadeIn 5s;
-  display: block;               /* Ensures all images have equal width */
-  width: inherit;
+  display: block; /* Ensures all images have equal width */
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 1s ease ;
-
+  transition: transform 1s ease;
 }
 
-.picture:hover {
-  transform: scale(1.10);  
+.pictureContainer:hover {
+  transform: scale(1.10);
   transition: transform 1.5s ease;
-  
+  z-index: 2;
 }
 
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-.clickable-text {
-  font-family: josefin,sans-serif;
-  font-weight: bold;
- 
-  color: #F4DCBD;  
- 
+
+
+
+.text {
+  animation: fadeIn 5s;
+  position: absolute;
+  font-size: 2.5rem; /* Responsive font size */
+  font-family: lux;
+  color: hsl(34, 71%, 85%);
+  z-index: 2;
+}
+
+.overlay-text {
+  top: 1%;
+  left: 10%;
+}
+
+.overlay-text2 {
+  top: 30%;
+  left: 35%;
+}
+
+.overlay-text3 {
+  top: 70%;
+  left: 30%;
+}
+
+.overlay-text4 {
+  top: 50%;
+  left: 10%;
+}
+
+.text-container1 {
+  position: absolute;
+  top: 50%; /* Position from the top */
+  left: 50%; /* Position from the left */
+  transform: translate(-50%, -50%); /* Centering trick */
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+  width: auto;
+  height: auto;
+}
+
+
+.text-container2 {
+  position: absolute;
+  top: 50%; /* Position from the top */
+  left: 50%; /* Position from the left */
+  transform: translate(-50%, -50%); /* Centering trick */
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+.text-container3 {
+  position: absolute;
+  top: 50%; /* Position from the top */
+  left: 50%; /* Position from the left */
+  transform: translate(-50%, -50%); /* Centering trick */
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+.text-container4 {
+  position: absolute;
+  top: 50%; /* Position from the top */
+  left: 50%; /* Position from the left */
+  transform: translate(-50%, -50%); /* Centering trick */
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+.pictureContainer:hover .text-container1 { /* Change here */
+  opacity: 1;
+}
+
+
+.pictureContainer:hover .text-container2 { /* Change here */
+  opacity: 1;
+}
+
+.pictureContainer:hover .text-container3 { /* Change here */
+  opacity: 1;
+}
+
+.pictureContainer:hover .text-container4 { /* Change here */
+  opacity: 1;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .pictureContainer {
+    max-width: 33.33%; /* 3 items per row on medium screens */
+  }
   
-  cursor: pointer;  
-  z-index: 1.5;
-  left: 0;
-    position:absolute;
-    text-align:center;
-   top:150px;
-    width: 100%
+  .text {
+    font-size: 2rem; /* Reduce font size on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .pictureContainer {
+    max-width: 50%; /* 2 items per row on smaller screens */
+  }
+
+  .picture-row {
+    padding: 10px; /* Less padding for smaller screens */
+  }
+
+  .text {
+    font-size: 1.5rem; /* Further reduce font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .pictureContainer {
+    max-width: 100%; /* 1 item per row on very small screens */
+  }
+  
+  .picture-row {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the content */
+  }
+  
+  .text {
+    font-size: 1.2rem; /* Further reduce font size */
+  }
 }

@@ -31,15 +31,18 @@ const ScrollNavbar = () => {
     // <nav className={`navbar ${isScrolled ? 'visible' : 'hidden'}`}>
     <nav className={`navbar`}> 
        <div className="navbar-left">
-        <SearchBar />  
+       <Logo />
+       <div className="navbar-links">
+      <a href="/">HOME</a>
+      <a href="/collections">COLLECTIONS</a>
+      <a href="/products">PRODUCTS</a>
+      <a href="/blog">BLOG</a>
+    </div>
       </div>
       
-      <div className="navbar-center">
-        <Logo />  
-      </div>
       
       <div className="navbar-right">
-        <DropdownMenu />  
+        <SearchBar />  
       </div>
     </nav>
   );
