@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './PicSlide.css';
-import leftImage from '.././Pics/Image1.jpeg';
-import rightImage from '.././Pics/Henriette - Large ring.jpeg';
+import leftImage from '../../assets/images/Image1Slide.jpeg';
+import rightImage from '../../assets/images/Henriette - Large ring.jpeg';
 
 const PicSlide = () => {
   const [isVisible, setIsVisible] = useState(false);

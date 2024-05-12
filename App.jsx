@@ -1,22 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollNavbar from './components/Navbar/ScrollNavbar';
-import Craftsmanship from './components/Crafts/Craftsmanship';
-import Experience from './components/experience/Experience';
-import Customization from './components/Customization/Customization';
-import PicSlide from './components/PicSlide/PicSlide'
 import Footer from './components/Footer/Footer';
-import LoopingV from './components/Video/LoopingV'
+import HomePage from './Route/HomePage';
+import ProductsPageRoute from './Route/ProductsPageRoute';
 const App = () => {
   return (
     <div>
-      <LoopingV/>
-      <ScrollNavbar />
-      <Craftsmanship/>
-      <Experience/> 
-      <Customization/>
-      <PicSlide/>
-      <Footer/>
-
+    <Router>
+      <div>
+        <ScrollNavbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} /> {/* Landing page */}
+          <Route path="/products" element={<ProductsPageRoute />} /> {/* Products page */}
+        </Routes>
+        <Footer/>
+      </div>
+    </Router>
     </div>
   );
 };

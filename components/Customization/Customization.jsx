@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Customization.css'; // Import your CSS file for styling
-import rightImage1 from '.././Pics/MOJARM4.png'; // Import your right image
+import rightImage1 from '../../assets/images/MOJARM4.png'; // Import your right image
 
 
 const Customization = () => {
