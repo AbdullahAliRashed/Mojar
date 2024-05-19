@@ -1,18 +1,23 @@
 .search-button {
-    display: flex; 
-    align-items: center;  
-    cursor: pointer;  
-    font-size: 16px;  
-    padding: 5px 10px;  
-    border-radius: 5px;  
-    font-size: 14px;
-    font-family: josefin;
-  }
-  
- 
-  
-  .search-icon {
-    font-size: 11px;
-    font-family: josefin;
-    margin-left: 5px; 
-  }
+  display: flex; 
+  align-items: center;  
+  cursor: pointer;  
+  font-size: 16px;  
+  padding: 5px 10px;  
+  border-radius: 5px;  
+  font-size: 14px;
+  font-family: josefin;
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+  border: 2px solid transparent; /* Add transparent border */
+}
+
+.search-button:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+.search-icon {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: josefin;
+  margin-left: 5px; 
+}
