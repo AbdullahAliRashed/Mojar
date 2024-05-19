@@ -8,11 +8,13 @@ import Carat from './Specs-components/Carat';
 import FormView from './Specs-components/FormView'; // Import the new component
 
 const Specs = ({ selectedOption, onBack  }) => {
-  const [shape, setShape] = useState('ROUND');
-  const [color, setColor] = useState('COLORLESS');  
-  const [clarity, setClarity] = useState('FLAWLESS');
-  const [cut, setCut] = useState('TOO SHALLOW');
-  const [carat, setCarat] = useState('1.75');
+  const [customizeObject, setCustomizeObject] = useState({ 
+    shape: 'ROUND',
+    color: 'COLORLESS',
+    clarity: 'FLAWLESS',
+    cut: 'TOO SHALLOW',
+    carat: '1.75'
+  })
   const [selectedComponentIndex, setSelectedComponentIndex] = useState(0);
   const [viewForm, setViewForm] = useState(false);
 
@@ -20,11 +22,11 @@ const Specs = ({ selectedOption, onBack  }) => {
     setSelectedComponentIndex(1);
   }
   const components = [
-    { key: 'shape', component: <Shape setVariable={setShape} /> },
-    { key: 'color', component: <Color setVariable={setColor} /> },
-    { key: 'clarity', component: <Clarity setVariable={setClarity} /> },
-    { key: 'cut', component: <Cut setVariable={setCut} /> },
-    { key: 'carat', component: <Carat setVariable={setCarat} /> },
+    'shape',
+    'color',
+    'clarity',
+    'cut',
+    'carat'
   ];
 
   const nextComponent = () => {
@@ -43,25 +45,45 @@ const Specs = ({ selectedOption, onBack  }) => {
     }
   };
 
+  const getSelectedComponent = () => {
+    switch (selectedComponentIndex) {
+      case 0: return <Shape setVariable={handleCustomizeSelection} />;
+      case 1: return <Color setVariable={handleCustomizeSelection} />;
+      case 2: return <Clarity setVariable={handleCustomizeSelection} />;
+      case 3: return <Cut setVariable={handleCustomizeSelection} />;
+      case 4: return <Carat setVariable={handleCustomizeSelection} />;
+    }
+  }
+
+  const handleCustomizeSelection = (key, value) => {
+    setCustomizeObject(
+      Object.assign(
+        {},
+        customizeObject,
+        { [key]: value}
+      )
+    )
+  }
+
   return (
     <div className='specs-menu'>
       {!viewForm ? (
         <>
           <div className='specs-buttons-container'>
             {components.map((comp, index) => (
-              <React.Fragment key={comp.key}>
+              <React.Fragment key={comp}>
                 <button
-                  className={`${comp.key}-button ${selectedComponentIndex === index ? 'bold-text' : ''}`}
+                  className={`${comp}-button ${selectedComponentIndex === index ? 'bold-text' : ''}`}
                   onClick={() => setSelectedComponentIndex(index)}
                 >
-                  {comp.key.toUpperCase()}
+                  {comp.toUpperCase()}
                 </button>
                 {index < components.length - 1 && <span className="separator">|</span>}
               </React.Fragment>
             ))}
           </div>
           <div>
-            {components[selectedComponentIndex].component}
+            {getSelectedComponent()}
           </div>
           <div className='back-next-buttons-container'>
             {selectedComponentIndex === 0   && ( // Render back button only on Shape component
@@ -74,11 +96,11 @@ const Specs = ({ selectedOption, onBack  }) => {
         </>
       ) : (
         <FormView 
-          shape={shape} 
-          color={color} 
-          clarity={clarity} 
-          cut={cut} 
-          carat={carat} 
+          shape={customizeObject.shape} 
+          color={customizeObject.color} 
+          clarity={customizeObject.clarity} 
+          cut={customizeObject.cut} 
+          carat={customizeObject.carat} 
           onBack1={previousComponent}
         />
       )}

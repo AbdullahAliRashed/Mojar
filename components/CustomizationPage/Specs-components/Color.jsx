@@ -9,33 +9,23 @@ import verylight from '../../../assets/images/color/verylight.png';
 import './Color.css'
 
 const Color = ({ setVariable }) => {
-    const handleClick = (data) => () => {
-        setVariable(data);
-      };
+      const colorData = [
+        {img: colorless, alt: "colorless", value: "COLORLESS"},
+        {img: nearcolorless, alt: "nearcolorless", value: "NEAR COLORLESS"},
+        {img: slightltytinted, alt: "slightltytinted", value: "SLIGHTLY TINTED"},
+        {img: verylight, alt: "verylight", value: "VERY LIGHT"},
+        {img: light, alt: "light", value: "LIGHT"},
+      ]
   return (
     <div className="color-flex-container">
-    <div className="color-item">
-      <img src={colorless} alt="colorless" />
-      <button onClick={handleClick('COLORLESS')}>COLORLESS</button>
-    </div>
-    <div className="color-item">
-      <img src={nearcolorless} alt="nearcolorless" />
-      <button onClick={handleClick('NEAR COLORLESS')}>NEAR COLORLESS</button>
-    </div>
-    <div className="color-item">
-      <img src={slightltytinted} alt="slightltytinted" />
-      <button onClick={handleClick('SLIGHTLY TINTED')}> SLIGHTLY TINTED</button>
-    </div>
-    <div className="color-item">
-      <img src={verylight} alt="verylight" />
-      <button onClick={handleClick('VERY LIGHT')}>VERY LIGHT</button>
-    </div>
-    <div className="color-item">
-      <img src={light} alt="light" />
-      <button onClick={handleClick('LIGHT')}>LIGHT</button>
-    </div>
-   
-    
+      {
+        colorData.map((color) => (
+          <div className="color-item" key={color.alt}>
+            <img src={color.img} alt={color.alt} />
+            <button onClick={() => setVariable("color", color.value)}>{color.value}</button>
+          </div>
+        ))
+      }
   </div>
   )
 }

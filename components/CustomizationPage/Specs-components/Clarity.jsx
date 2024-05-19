@@ -7,36 +7,26 @@ import slightlyincluded from '../../../assets/images/clarity/slightlyincluded.pn
 
 import './Clarity.css'
 const Clarity = ({setVariable}) => {
-
-    const handleClick = (data) => () => {
-        setVariable(data);
-      };
+    
+    const clarityData = [
+      {alt: "flawless", value: "FLAWLESS", img: flawless},
+      {alt: "vslightlyincluded", value: "VERY VERY SLIGHTLY INCLUDED", img: vslightlyincluded},
+      {alt: "vslightlyincluded2", value: "VERY SLIGHTLY INCLUDED", img: vslightlyincluded2},
+      {alt: "slightlyincluded", value: "SLIGHTLY INCLUDED", img: slightlyincluded},
+      {alt: "included", value: "INCLUDED", img: included}
+    ]
     return (
-        <div className="clarity-flex-container">
-        <div className="clarity-item">
-          <img src={flawless} alt="flawless" />
-          <button onClick={handleClick('FLAWLESS')}>FLAWLESS</button>
-        </div>
-        <div className="clarity-item">
-          <img src={vslightlyincluded} alt="vslightlyincluded" />
-          <button onClick={handleClick('VERY VERY SLIGHTLY INCLUDED')}>VERY VERY SLIGHTLY INCLUDED</button>
-        </div>
-        <div className="clarity-item">
-          <img src={vslightlyincluded2} alt="vslightlyincluded2" />
-          <button onClick={handleClick('VERY SLIGHTLY INCLUDED')}>VERY SLIGHTLY INCLUDED</button>
-        </div>
-        <div className="clarity-item">
-          <img src={slightlyincluded} alt="slightlyincluded" />
-          <button onClick={handleClick('SLIGHTLY INCLUDED')}>SLIGHTLY INCLUDED</button>
-        </div>
-        <div className="clarity-item">
-          <img src={included} alt="included" />
-          <button onClick={handleClick('INCLUDED')}>INCLUDED</button>
-        </div>
-       
-        
+      <div className="clarity-flex-container">
+        {
+          clarityData.map((comp)=>(
+          <div className="clarity-item" key={comp.alt}>
+            <img src={comp.img} alt={comp.alt} />
+            <button onClick={() => setVariable("clarity", comp.value)}>{comp.value}</button>
+          </div>
+          ))
+        }  
       </div>
-      )
+    )
 }
 
 export default Clarity

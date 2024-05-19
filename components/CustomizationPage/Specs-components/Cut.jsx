@@ -4,26 +4,21 @@ import toodeep from '../../../assets/images/cut/toodeep.png';
 import excellent from '../../../assets/images/cut/excellenttogood.png';
 import './Cut.css'
 const Cut = ({setVariable}) => {
-    const handleClick = (data) => () => {
-        setVariable(data);
-      };
+      const cutData = [
+        {img: tooshallow, alt: "tooshallow", value: "TOO SHALLOW"},
+        {img: toodeep, alt: "toodeep", value: "TOO DEEP"},
+        {img: excellent, alt: "excellent", value: "EXCELLENT TO GOOD"}
+      ]
     return (
         <div className="cut-flex-container">
-        <div className="cut-item">
-          <img src={tooshallow} alt="tooshallow" />
-          <button onClick={handleClick('TOO SHALLOW')}>TOO SHALLOW</button>
-        </div>
-        <div className="cut-item">
-          <img src={toodeep} alt="toodeep" />
-          <button onClick={handleClick('TOO DEEP')}>TOO DEEP</button>
-        </div>
-        <div className="cut-item">
-          <img src={excellent} alt="excellent" />
-          <button onClick={handleClick('EXCELLENT TO GOOD')}>EXCELLENT TO GOOD</button>
-        </div>
-       
-       
-        
+          {
+            cutData.map((cut)=> (
+              <div className="cut-item" key={cut.alt}>
+                <img src={cut.img} alt={cut.alt} />
+                <button onClick={() => setVariable('cut', cut.value)}>{cut.value}</button>
+              </div>
+            ))
+          }  
       </div>
       )
 }
