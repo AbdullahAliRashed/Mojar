@@ -14,7 +14,7 @@ const HomePage = () => {
         <Craftsmanship/>
         <Experience/> 
         <Customization/>
-        <PicSlide/> 
+        {/* <PicSlide/>  */}
     </div>
   );
 };
