@@ -1,0 +1,159 @@
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@font-face {
+  font-family: josefin;
+  src: url('../../assets/fonts/JosefinSans.ttf');
+}
+
+.product {
+  margin-top: 110px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 50px;
+  background-color:#043A29;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+  align-items: flex-start;
+}
+
+.product-images {
+  height: 100%;
+  width: 100%; /* Full width on small screens */
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image-main {
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  height: 650px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.product-image-main:hover {
+  transform: scale(1.05);
+}
+
+.slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color:transparent;
+  padding: 10px 0;
+}
+
+.slider-image {
+  animation: fadeIn 3s;
+  width: 80px;
+  height: auto;
+  object-fit: cover;
+  margin: 0 5px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.slider-image.active {
+  opacity: 1;
+}
+
+.slider-arrows {
+  display: none; /* Hide slider arrows on small screens */
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  flex: 1;
+  width: 100%; /* Full width on small screens */
+  padding-left: 0; /* Remove left padding on small screens */
+  padding-top: 0;
+}
+
+.product-title {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-size: 4rem;
+  padding-top: 0;
+  top: 0;
+  left: 0;
+}
+
+.product-price {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.add-to-cart-button {
+  background-color: #195E47;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.add-to-cart-button:hover {
+  background-color: transparent;
+}
+
+.ring-size {
+  margin-top: 20px;
+}
+
+.ring-size-label {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.ring-size-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+.ring-size-option {
+  flex-grow: 1;
+  background-color: #195E47;
+  color: #fff;
+  border: none; 
+  padding: 20px 20px 20px 20px;
+  cursor: pointer;
+}
+
+.ring-size-option.selected {
+  opacity: 50%;
+}
+
+.ring-size-option:hover {
+  transition: background-color 0.3s;
+  opacity: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  /* Apply styles for screens smaller than 768px */
+  .slider-arrows {
+    display: none; /* Hide slider arrows on small screens */
+  }
+}

@@ -1,0 +1,101 @@
+@font-face {
+    font-family: qersa;  
+    src: url('./assets/fonts/Qersa.ttf');  /* Path to the font file */
+  }
+@font-face {
+  font-family: josefin;
+  src: url('../../assets/fonts/JosefinSans-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: josefinBold;
+    src: url('../../assets/fonts/Josefin/JosefinSans-Bold.ttf');
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+.customization-page{
+  margin-top: 93px;
+    background-color: #F4DCBD;
+    display: flex;
+    flex-direction: column;
+    
+}
+.logo-container{
+    animation: fadeIn 3s;
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+.options-container{
+  animation: fadeIn 5s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    
+}
+.buttons-container button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: josefin;
+    
+    
+}
+.moving-image{
+  
+    display: block;
+   justify-content: center;
+   margin-left: auto;
+    margin-right: auto;
+}
+.ring-image{
+    width: 200px;
+   object-fit: cover;
+    margin-bottom: 20px;  
+}
+.buttons-container button.selected{
+    font-weight: bold;    
+
+}
+.buttons-container button:hover{
+    font-weight: bold;    
+}
+.mojar-logo-full{
+  width: 400px;
+  height: 100px;
+  margin-top: 5%;
+  object-fit: cover;
+  animation: fadeIn 3s;
+}
+
+.back-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+  }
+  
+  .back-button span {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #333; /* Adjust the color as needed */
+  }
+  
+  .back-button:hover span {
+    color: #555; /* Adjust the hover color as needed */
+  }
+  .separator {
+    color: black; /* Adjust the color as needed */
+    font-weight: bold;
+    align-items: center;
+  }
