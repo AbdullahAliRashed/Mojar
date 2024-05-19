@@ -1,0 +1,79 @@
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.shape-flex-container {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  flex-direction: row;
+  margin-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.shape-item {
+  animation: fadeIn 3s;
+  text-align: center;
+  margin-bottom: 20px; /* Adjust the margin as needed */
+  font-weight: bold;
+  transition: transform 1.1s ease;
+  flex: 1 1 auto; /* Allow items to grow and shrink */
+  box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
+  padding: 10px;
+}
+
+.shape-item img:hover {
+  transform: scale(1.05);
+  transition: transform 1.1s ease;
+}
+
+.shape-item img {
+  width: 100%; /* Adjust the image size as needed */
+  height: 110px;
+  object-fit: contain;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.shape-item button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: josefin;
+  color: #043A29;
+  font-size: large;
+}
+
+.shape-item button:hover {
+  font-weight: bold;
+  transition: transform 1.1s ease;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .shape-flex-container {
+    
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+
+  .shape-item {
+    flex: 1 1 100%; /* Full width on smaller screens */
+    margin-bottom: 15px; /* Reduce margin for smaller screens */
+    text-align: center;
+  padding: 10px;
+  }
+
+  .shape-item img {
+    
+    height: auto; /* Let the height adjust automatically */
+    margin-bottom:10px;
+  }
+  .shape-item button {
+    text-align: start;
+    height: auto; /* Let the height adjust automatically */
+    
+  }
+}

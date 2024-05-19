@@ -1,0 +1,185 @@
+.specs-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .specs-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .specs-buttons-container button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: josefin;
+    color: #043A29;
+    font-size: large;
+  }
+  
+  .specs-buttons-container button.selected {
+    font-weight: bolder;
+  }
+  
+  .separator {
+    color: black;
+    align-self: flex-start;
+  }
+  
+  .next-button {
+    appearance: none;
+    font-family: josefin;
+    background-color: transparent;
+    border: 2px solid #043A29;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #043A29;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    max-height: 50px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    margin-top: 30px;
+  }
+  
+  .next-button:disabled {
+    pointer-events: none;
+  }
+  
+  .next-button:hover {
+    color: white;
+    background-color: #043A29;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .next-button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  .back-button {
+    appearance: none;
+    font-family: josefin;
+    background-color: transparent;
+    border: 2px solid #043A29;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #043A29;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    max-height: 50px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    margin-top: 30px;
+  }
+  
+  .back-button:hover {
+    color: white;
+    background-color: #043A29;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .back-button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  .back-next-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Add margin for spacing */
+  }
+  
+  .back-next-buttons-container button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: josefin;
+    color: #043A29;
+    font-size: large;
+  }
+  
+  .back-next-buttons-container button.selected {
+    font-weight: bolder;
+  }
+  
+  .separator {
+    color: black;
+    align-self: flex-start;
+  }
+  
+  .next-button,
+  .back-button {
+    appearance: none;
+    font-family: josefin;
+    background-color: transparent;
+    border: 2px solid #043A29;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #043A29;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    max-height: 50px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+  }
+  
+  .next-button:disabled {
+    pointer-events: none;
+  }
+  
+  .next-button:hover,
+  .back-button:hover {
+    color: white;
+    background-color: #043A29;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .next-button:active,
+  .back-button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }

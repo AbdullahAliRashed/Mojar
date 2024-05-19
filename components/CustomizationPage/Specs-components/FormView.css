@@ -1,0 +1,153 @@
+@font-face {
+    font-family: josefin;
+    src: url('../../assets/fonts/JosefinSans-VariableFont_wght.ttf');
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+* {
+    font-family: josefin;
+}
+
+.form-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-table {
+    animation: fadeIn 3s;
+    display: table;
+    margin: 20px 0;
+    border: 1px solid #043A29;
+    width: 100%;
+}
+
+.form-row {
+    display: table-row;
+}
+
+.form-cell {
+    text-align: center;
+    display: table-cell;
+    padding: 10px 20px;
+    border: 1px solid #043A29;
+}
+
+.form-buttons {
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    height: 50px;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%; /* Ensure the container takes the full width */
+}
+
+.back-button1,
+.request-call-button {
+    flex: 1; /* Allow buttons to take equal space */
+    max-width: 200px; /* Optional max width for larger screens */
+    appearance: none;
+    font-family: josefin;
+    background-color: transparent;
+    border: 2px solid #043A29;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #043A29;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.back-button1:disabled,
+.request-call-button:disabled {
+    pointer-events: none;
+}
+.back-button1{
+    margin-top: 0;
+}
+
+.back-button1:hover,
+.request-call-button:hover {
+    color: white;
+    background-color: #043A29;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+.back-button1:active,
+.request-call-button:active {
+    box-shadow: none;
+}
+
+.form-cell img {
+    width: 100%;
+    max-width: 150px; /* Limit image width */
+    height: auto;
+    margin: 0 auto 10px; /* Center image vertically */
+    display: block;
+}
+
+.form-cell form-img-text {
+    font-family: josefin;
+    color: #043A29;
+    font-size: large;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #000;
+    opacity: 0.7;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .form-row {
+        display: block; /* Display rows as blocks on smaller screens */
+    }
+
+    .form-cell {
+        display: block; /* Display cells as blocks on smaller screens */
+        width: 92.9%; /* Make cells full width on smaller screens */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .form-cell:not(:first-child) {
+        margin-top: 20px; /* Add margin to separate cells */
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        font-size: 14px;
+    }
+
+    .form-cell img {
+        max-width: 40%;
+        margin-top: 10px;
+    }
+
+    .back-button,
+    .request-call-button {
+        
+        width: 100%; /* Ensure full width for buttons on smaller screens */
+        max-width: none; /* Override max-width */
+    }
+}

@@ -4,6 +4,8 @@ import ScrollNavbar from './components/Navbar/ScrollNavbar';
 import Footer from './components/Footer/Footer';
 import HomePage from './Route/HomePage';
 import ProductsPageRoute from './Route/ProductsPageRoute';
+import ProductPage from './Route/ProductPage';
+import CustomizationPage from './Route/CustomizationPage';
 const App = () => {
   return (
     <div>
@@ -13,6 +15,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} /> {/* Landing page */}
           <Route path="/products" element={<ProductsPageRoute />} /> {/* Products page */}
+          <Route path="/Product" element={<ProductPage/>}/> {/*Product Page*/}
+          <Route path="/customize" element={<CustomizationPage/>}/> {/*customize Page*/}
         </Routes>
         <Footer/>
       </div>
