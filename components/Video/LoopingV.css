@@ -14,3 +14,14 @@
   object-fit: cover; 
 }
 
+@media only screen and (max-width: 768px) {
+  .vidContainer {
+    margin-top: 190px; /* Adjust margin-top for smaller screens */
+  }
+    .LoopingV {
+    height: calc(100vh - 190px); /* Adjust height for smaller screens */
+    width: 100%; /* Set width to 100% to fit inside the page */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+}
+

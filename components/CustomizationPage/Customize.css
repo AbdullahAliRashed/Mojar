@@ -15,10 +15,10 @@
     100% { opacity: 1; }
   }
 .customization-page{
-  margin-top: 93px;
     background-color: #F4DCBD;
     display: flex;
     flex-direction: column;
+    padding-top: 400px;
     
 }
 .logo-container{

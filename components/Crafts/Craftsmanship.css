@@ -166,3 +166,23 @@ div {
     margin-bottom: 20px; /* Adjust as needed */
   }
   
+  @media (max-width: 768px) {
+    .title--big {
+        font-size: 250%; /* Decrease font size by 10% */
+      }
+    
+  
+    .border-silver {
+      border-color: transparent; /* Set border color to transparent */
+    }
+
+    .home-about-column--right{
+        padding-bottom: 1px;
+        padding-top: 50px;
+    }
+
+    .section--about-papazian__content{
+        padding-bottom: 80px;
+        max-width: 95%;
+    }
+  }

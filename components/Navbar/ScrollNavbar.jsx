@@ -8,9 +8,7 @@ import { faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 const ScrollNavbar = () => {
 
-  useEffect(() => {
 
-  }, []);
 
   return (
     <nav className={`navbar`}>
@@ -25,7 +23,7 @@ const ScrollNavbar = () => {
           <ul>
           <li><a href="/">HOME</a></li>
           <li className="submenu-container">
-          <a href="/Jewelry">JEWELRY</a>
+          <a className="disabled" style={{cursor:'default'}}>JEWELRY</a>
           <div className='submenu-wrapper'>
           <ul class="submenu">
                 <li><a href="#">Beds</a></li>

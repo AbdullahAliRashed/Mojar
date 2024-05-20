@@ -21,11 +21,9 @@
   margin-top: 100px;
 }
 
-
 .pictureContainer:hover .text-container { /* Change here */
   opacity: 1;
 }
-
 
 .pictureContainer {
   position: relative;
@@ -54,42 +52,31 @@
   100% { opacity: 1; }
 }
 
-
-
 .text {
   animation: fadeIn 5s;
   position: absolute;
-  font-size: 2.5rem; /* Responsive font size */
+  font-size: 3vw; /* Changed to viewport width units for responsiveness */
   font-family: lux;
   color: hsl(34, 71%, 85%);
   z-index: 2;
 }
 
-.overlay-text {
-  top: 1%;
-  left: 10%;
-}
-
-.overlay-text2 {
-  top: 30%;
-  left: 35%;
-}
-
-.overlay-text3 {
-  top: 70%;
-  left: 30%;
-}
-
+.overlay-text,
+.overlay-text2,
+.overlay-text3,
 .overlay-text4 {
-  top: 50%;
+  /* top: 1%; */
   left: 10%;
+  font-size: 3vw;
 }
 
-.text-container1 {
-  position: absolute;
-  top: 50%; /* Position from the top */
-  left: 50%; /* Position from the left */
-  transform: translate(-50%, -50%); /* Centering trick */
+/* Shared text-container styles */
+.text-container {
+  position: relative;
+  margin-top: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -98,54 +85,7 @@
   height: auto;
 }
 
-
-.text-container2 {
-  position: absolute;
-  top: 50%; /* Position from the top */
-  left: 50%; /* Position from the left */
-  transform: translate(-50%, -50%); /* Centering trick */
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 2;
-}
-
-.text-container3 {
-  position: absolute;
-  top: 50%; /* Position from the top */
-  left: 50%; /* Position from the left */
-  transform: translate(-50%, -50%); /* Centering trick */
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 2;
-}
-
-.text-container4 {
-  position: absolute;
-  top: 50%; /* Position from the top */
-  left: 50%; /* Position from the left */
-  transform: translate(-50%, -50%); /* Centering trick */
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 2;
-}
-
-.pictureContainer:hover .text-container1 { /* Change here */
-  opacity: 1;
-}
-
-
-.pictureContainer:hover .text-container2 { /* Change here */
-  opacity: 1;
-}
-
-.pictureContainer:hover .text-container3 { /* Change here */
-  opacity: 1;
-}
-
-.pictureContainer:hover .text-container4 { /* Change here */
+.pictureContainer:hover .text-container {
   opacity: 1;
 }
 
@@ -154,9 +94,20 @@
   .pictureContainer {
     max-width: 33.33%; /* 3 items per row on medium screens */
   }
-  
+
+  .text-container1,
+  .text-container2,
+  .text-container3,
+  .text-container4 {
+    bottom: 5%;
+    left: auto;
+    right: 50%;
+    
+  }
+
   .text {
-    font-size: 2rem; /* Reduce font size on smaller screens */
+    font-size: 8vw; /* Adjust font size */
+    
   }
 }
 
@@ -165,12 +116,45 @@
     max-width: 50%; /* 2 items per row on smaller screens */
   }
 
+  .pictureContainer:hover {
+    transform: none !important; /* Remove scaling effect */
+  }
+
   .picture-row {
     padding: 10px; /* Less padding for smaller screens */
   }
 
   .text {
-    font-size: 1.5rem; /* Further reduce font size */
+    font-size: 8vw; /* Further adjust font size */
+  }
+
+  .overlay-text,
+  .overlay-text2,
+  .overlay-text3,
+  .overlay-text4 {
+    top: 5%;
+    left: 5%;
+    font-size: 7vw; /* Adjust font size */
+  }
+
+  .text-container,
+  .text-container2,
+  .text-container3,
+  .text-container4 {
+    opacity: 1;
+    bottom: 5%;
+    left: 50% !important;
+  }
+
+  .text-container3{
+    bottom: 20% !important;
+    margin-bottom: 90% !important;
+  }
+  
+
+  .Text-test {
+    font-size: 1rem !important;
+    width: max-content
   }
 }
 
@@ -178,13 +162,47 @@
   .pictureContainer {
     max-width: 100%; /* 1 item per row on very small screens */
   }
-  
+
+  .pictureContainer:hover {
+    transform: none !important; /* Remove scaling effect */
+  }
+
   .picture-row {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center the content */
   }
-  
+
   .text {
-    font-size: 1.2rem; /* Further reduce font size */
+    font-size: 5vw; /* Further adjust font size */
+  }
+
+  .overlay-text,
+  .overlay-text2,
+  .overlay-text3,
+  .overlay-text4 {
+    top: 5%;
+    left: 5%;
+    font-size: 8vw; /* Further adjust font size */
+  }
+
+  .text-container,
+  .text-container2,
+  .text-container3,
+  .text-container4 {
+    bottom: 5%;
+    left: 43% !important;
+    font-size: 2vw;
+    align-items: center;
+    opacity: 1;
+  }
+
+  .text-container3{
+    bottom: 20% !important;
+    margin-bottom: 90% !important;
+  }
+
+  .Text-test {
+    font-size: 1.5rem !important;
+    width: max-content
   }
 }

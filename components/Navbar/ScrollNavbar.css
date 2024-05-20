@@ -107,7 +107,7 @@
   background-color: #043A29;
   border-radius: 10px; /* Add rounded edges */
   opacity: 0;
-  transition: opacity 0.2s;
+  
   pointer-events: none; 
   left: -150px;
   top: 100%; /* Position directly below the submenu-container */
@@ -165,3 +165,45 @@
 .search-button:hover {
   transform: scale(1.1); /* Scale up on hover */
 }
+
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+
+  .navbar {
+    background: #043A29; /* Set background color for mobile */
+  }
+
+  .navbar:hover {
+    background: #043A29; /* Keep background color on hover */
+  }
+  .navbar-links ul {
+    margin-top: 50%; /* Increase space between links */
+    position: relative;
+    left: -5%;
+    display: flex;
+    justify-content: center; /* Center links horizontally */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow links to wrap if necessary */
+  }
+
+  .navbar-links ul li {
+    margin: 0; /* Remove top and bottom margin */
+  }
+
+  .navbar-links ul li a {
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+
+  .submenu-wrapper {
+    position: fixed; /* Fixed position */
+    top: 180px; /* Align to top */
+    left: 0; /* Align to left */
+    width: 100vw; /* Make submenu full viewport width */
+    display: flex;
+    justify-content: center; /* Center submenu horizontally */
+  }
+
+  
+}
+
