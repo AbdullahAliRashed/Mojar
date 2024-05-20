@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import './FormView.css';
 import cushion from '../../../assets/images/shapes/cushion.png';
 import emerald from '../../../assets/images/shapes/Emerald.png';
@@ -32,16 +32,34 @@ const FormView = ({ material, shape, color, clarity, cut, carat, onBack1 }) => {
 
 
   const handleRequestCall = () => {
-    const params = { material, shape, color, clarity, cut, carat, name, email, contactNumber };
-    console.log(params);
-    // axios.get('https://yourapiurl.com/endpoint', { params })
-    //   .then(response => {
-    //     console.log('Data fetched successfully:', response.data);
-    //   })
-    //   .catch(error => {
-    //     console.error('Error fetching data:', error);
-    //   });
+    // Configuration for Axios with CSRF token handling
+    axios.defaults.xsrfCookieName = 'csrftoken';
+    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
+    const specs = { material, shape, color, clarity, cut, carat };
+    const requestData = {
+      specs,
+      name,
+      email,
+      contactNumber,
+    };
+    console.log(requestData)
+
+    axios.post('http://localhost:8000/Products/find-closest-product/', requestData, {
+      headers: {
+        'Content-Type': 'application/json',  // Set content type
+      },
+    })
+    .then(response => {
+      console.log('Closest product data:', response.data);
+      // Handle the response data as needed
+    })
+    .catch(error => {
+      console.error('Error fetching closest product:', error);
+    });
   };
+
+
   useEffect(handleRequestCall,[]);
   const getImage = (type, value) => {
     switch (type) {
