@@ -28,7 +28,7 @@ const Shape = ({ setVariable }) => {
         shapeData.map((shape)=>(
           <div className="shape-item" key={shape.alt}>
             <img src={shape.img} alt={shape.alt} />
-            <button onClick={() => setVariable("shape", shape.value)}>{shape.value}</button>
+            <button  onClick={() => setVariable("shape", shape.value)}>{shape.value}</button>
           </div>
         ))
       }    

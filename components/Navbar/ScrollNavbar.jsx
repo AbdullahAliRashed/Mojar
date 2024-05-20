@@ -27,7 +27,7 @@ const ScrollNavbar = () => {
           <li className="submenu-container">
           <a href="/Jewelry">JEWELRY</a>
           <div className='submenu-wrapper'>
-          <ul class="submenu">
+          <ul className="submenu">
                 <li><a href="#">Beds</a></li>
                 <li><a href="#">Chairs</a></li>
                 <li><a href="#">Cebinets</a></li>

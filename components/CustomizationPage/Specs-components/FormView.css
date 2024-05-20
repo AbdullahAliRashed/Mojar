@@ -19,6 +19,7 @@
 }
 
 .form-table {
+    will-change: opacity;
     animation: fadeIn 3s;
     display: table;
     margin: 20px 0;

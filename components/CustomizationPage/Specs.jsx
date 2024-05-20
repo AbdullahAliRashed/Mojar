@@ -76,8 +76,8 @@ const Specs = ({ selectedOption, onBack, material }) => {
                 {index < components.length - 1 && <span className="separator">|</span>}
               </React.Fragment>
             ))}
-          </div>
-          <div>
+          </div >
+          <div className='rendered-container'>
             {getSelectedComponent()}
           </div>
           <div className='back-next-buttons-container'>

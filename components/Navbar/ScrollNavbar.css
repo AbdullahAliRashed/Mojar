@@ -1,4 +1,5 @@
 .navbar {
+  will-change: opacity, transform;
   height: 190px;
   position: absolute;
   display: flex;
@@ -9,13 +10,17 @@
   background: transparent; /* Initial background color */
   color: #E5BD7F;
   font-family: qersa;
-  z-index: 10; /* Ensure content doesn't overflow outside the navbar */
-  transition: background-color 0.5s ease;
+  z-index: 3; /* Ensure content doesn't overflow outside the navbar */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-10px); /* Or translateZ(0) for forcing GPU */
 }
 
 /* Apply the hover effect to the background color */
 .navbar:hover {
   background: #043A29; /* Transparent background on hover */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Other styles remain the same */
