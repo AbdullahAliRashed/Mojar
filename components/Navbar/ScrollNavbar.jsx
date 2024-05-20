@@ -25,27 +25,27 @@ const ScrollNavbar = () => {
           <li className="submenu-container">
           <a className="disabled" style={{cursor:'default'}}>JEWELRY</a>
           <div className='submenu-wrapper'>
-          <ul class="submenu">
-                <li><a href="#">Beds</a></li>
-                <li><a href="#">Chairs</a></li>
-                <li><a href="#">Cebinets</a></li>
-                <li><a href="#">Desk & Table</a></li>
-                <li><a href="#">Bookcase</a></li>
+          <ul className="submenu">
+            <div className="submenu-title">CREATIONS</div>
+            <li><a href="#">Necklaces</a></li>
+            <li><a href="#">Bracelets</a></li>
+            <li><a href="#">Rings</a></li>
+            <li><a href="#">Earrings</a></li>
+            <li><a href="#">Accessory</a></li>
           </ul>
           <ul className="submenu">
-                <li><a href="#">Necklaces</a></li>
-                <li><a href="#">Bracelets</a></li>
-                <li><a href="#">Rings</a></li>
-                <li><a href="#">Earrings</a></li>
-                <li><a href="#">Watches</a></li>
-              </ul>
-              <ul className="submenu">
-                <li><a href="#">Gold</a></li>
-                <li><a href="#">Silver</a></li>
-                <li><a href="#">Diamond</a></li>
-                <li><a href="#">Platinum</a></li>
-                <li><a href="#">Pearl</a></li>
-              </ul>
+            <div className="submenu-title">COLLECTIONS</div>
+            <li><a href="#">Celestial Sparkle</a></li>
+            <li><a href="#">Midnight Serenade</a></li>
+            <li><a href="#">Ocean's Embrace</a></li>
+            <li><a href="#">Enchanted Garden</a></li>
+            <li><a href="#">Vintage Glamour</a></li>
+          </ul>
+          <ul className="submenu">
+            <div className="submenu-title">SELECTIONS</div>
+            <li><a href="#">Gold</a></li>
+            <li><a href="#">Silver</a></li>
+          </ul>
             </div>
           </li>
           <li><a href="/products">PRODUCTS</a></li>

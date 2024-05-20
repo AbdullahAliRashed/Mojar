@@ -109,9 +109,9 @@
   opacity: 0;
   
   pointer-events: none; 
-  left: -150px;
+  left: -300px;
   top: 100%; /* Position directly below the submenu-container */
-  width: 600px;
+  width: 800px;
 }
 
 .submenu-container:hover .submenu-wrapper,
@@ -121,7 +121,7 @@
 }
 
 .navbar-links ul .submenu {
-  margin: 30px 10px; /* Add margin between submenus */
+  margin: 20px 30px; /* Add margin between submenus */
 }
 
 .navbar-links ul .submenu li {
@@ -130,7 +130,7 @@
 }
 
 .navbar-links ul .submenu li a {
-  padding: 15px 20px;
+  padding: 13px 20px;
   display: block; /* Ensure each link is a block element */
   width: 100%;
 }
@@ -164,6 +164,12 @@
 
 .search-button:hover {
   transform: scale(1.1); /* Scale up on hover */
+}
+
+.submenu-title {
+  color: #E5BD7F; /* Set color for submenu titles */
+  font-weight: bold; /* Make the titles bold */
+  padding: 15px 20px; /* Add padding to the titles */
 }
 
 
