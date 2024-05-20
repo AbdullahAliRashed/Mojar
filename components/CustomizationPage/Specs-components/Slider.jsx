@@ -7,7 +7,7 @@ const Slider = ({ setVariable }) => {
   const handleChange = (event) => {
     const newValue = parseFloat(event.target.value);
     setValue(newValue);
-    setVariable(newValue); // Update parent state with new slider value
+    setVariable("carat", newValue); // Update parent state with new slider value
   };
 
   return (

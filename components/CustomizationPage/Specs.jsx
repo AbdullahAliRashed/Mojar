@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import axios from 'axios';
 import './Specs.css';
 import Shape from './Specs-components/Shape';
 import Color from './Specs-components/Color';
@@ -7,25 +8,23 @@ import Cut from './Specs-components/Cut';
 import Carat from './Specs-components/Carat';
 import FormView from './Specs-components/FormView'; // Import the new component
 
-const Specs = ({ selectedOption, onBack  }) => {
-  const [shape, setShape] = useState('ROUND');
-  const [color, setColor] = useState('COLORLESS');  
-  const [clarity, setClarity] = useState('FLAWLESS');
-  const [cut, setCut] = useState('TOO SHALLOW');
-  const [carat, setCarat] = useState('1.75');
+const Specs = ({ selectedOption, onBack, material }) => {
+  const [customizeObject, setCustomizeObject] = useState({
+    material: material,
+    shape: 'ROUND',
+    color: 'COLORLESS',
+    clarity: 'FLAWLESS',
+    cut: 'TOO SHALLOW',
+    carat: '1.75'
+  });
   const [selectedComponentIndex, setSelectedComponentIndex] = useState(0);
   const [viewForm, setViewForm] = useState(false);
 
-  const handleBackFromViewForm=()=>{
+  const handleBackFromViewForm = () => {
     setSelectedComponentIndex(1);
-  }
-  const components = [
-    { key: 'shape', component: <Shape setVariable={setShape} /> },
-    { key: 'color', component: <Color setVariable={setColor} /> },
-    { key: 'clarity', component: <Clarity setVariable={setClarity} /> },
-    { key: 'cut', component: <Cut setVariable={setCut} /> },
-    { key: 'carat', component: <Carat setVariable={setCarat} /> },
-  ];
+  };
+
+  const components = ['shape', 'color', 'clarity', 'cut', 'carat'];
 
   const nextComponent = () => {
     if (selectedComponentIndex < components.length - 1) {
@@ -43,28 +42,46 @@ const Specs = ({ selectedOption, onBack  }) => {
     }
   };
 
+  const getSelectedComponent = () => {
+    switch (selectedComponentIndex) {
+      case 0: return <Shape setVariable={handleCustomizeSelection} />;
+      case 1: return <Color setVariable={handleCustomizeSelection} />;
+      case 2: return <Clarity setVariable={handleCustomizeSelection} />;
+      case 3: return <Cut setVariable={handleCustomizeSelection} />;
+      case 4: return <Carat setVariable={handleCustomizeSelection} />;
+      default: return null;
+    }
+  };
+
+  const handleCustomizeSelection = (key, value) => {
+    setCustomizeObject(prevState => ({
+      ...prevState,
+      [key]: value
+    }));
+  };
+
   return (
     <div className='specs-menu'>
       {!viewForm ? (
         <>
           <div className='specs-buttons-container'>
             {components.map((comp, index) => (
-              <React.Fragment key={comp.key}>
+              <React.Fragment key={comp}>
                 <button
-                  className={`${comp.key}-button ${selectedComponentIndex === index ? 'bold-text' : ''}`}
+                  className={`${comp}-button ${selectedComponentIndex === index ? 'bold-text' : ''}`}
                   onClick={() => setSelectedComponentIndex(index)}
                 >
-                  {comp.key.toUpperCase()}
+                  {comp.toUpperCase()}
                 </button>
                 {index < components.length - 1 && <span className="separator">|</span>}
               </React.Fragment>
             ))}
           </div>
           <div>
-            {components[selectedComponentIndex].component}
+            {getSelectedComponent()}
           </div>
           <div className='back-next-buttons-container'>
-            {selectedComponentIndex === 0   && ( // Render back button only on Shape component
+            {selectedComponentIndex === 0 && (
               <button className='back-button' onClick={onBack}>Back</button>
             )}
             <button className='next-button' onClick={nextComponent}>
@@ -73,12 +90,13 @@ const Specs = ({ selectedOption, onBack  }) => {
           </div>
         </>
       ) : (
-        <FormView 
-          shape={shape} 
-          color={color} 
-          clarity={clarity} 
-          cut={cut} 
-          carat={carat} 
+        <FormView
+          material={customizeObject.material}
+          shape={customizeObject.shape}
+          color={customizeObject.color}
+          clarity={customizeObject.clarity}
+          cut={customizeObject.cut}
+          carat={customizeObject.carat}
           onBack1={previousComponent}
         />
       )}

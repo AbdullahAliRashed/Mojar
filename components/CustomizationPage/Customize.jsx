@@ -9,11 +9,11 @@ import Specs from './Specs';
 
 const Customize = () => {
   const [selectedOption, setSelectedOption] = useState(null);
-
+  const [material,setMaterial]=useState(null);
   const handleOptionClick = (option) => {
     setSelectedOption(option);
   };
-
+  
   const handleBackToCustomize = () => {
     setSelectedOption(null); // Reset selectedOption to go back to the customization
   };
@@ -42,14 +42,16 @@ const Customize = () => {
               />
            </div>
           <div className='buttons-container'>            
-            <button onClick={() => handleOptionClick('DIAMOND')}>DIAMOND</button>
+            <button onClick={() => {handleOptionClick('DIAMOND') ; setMaterial('DIAMOND')}}>DIAMOND</button>
             <span className="separator">|</span> {/* Vertical bar separator */}
-            <button onClick={() => handleOptionClick('GOLD')}>GOLD</button>
+            <button onClick={() => {handleOptionClick('GOLD');
+              setMaterial('GOLD')
+            }}>GOLD</button>
           </div>
         </div>
         )}
         {selectedOption && (
-          <Specs selectedOption={selectedOption} onBack={handleBackToCustomize} /> // Pass onBack callback
+          <Specs selectedOption={selectedOption} onBack={handleBackToCustomize} material={material} /> // Pass onBack callback
         )}
       </div>
     </div>

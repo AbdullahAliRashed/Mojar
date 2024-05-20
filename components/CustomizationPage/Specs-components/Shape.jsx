@@ -11,49 +11,28 @@ import round from '../../../assets/images/shapes/Round.png';
 import './Shape.css'
 
 const Shape = ({ setVariable }) => {
-  const handleClick = (data) => () => {
-    setVariable(data);
-  };
+  const shapeData = [
+    {img: round, alt: "round", value: "ROUND"},
+    {img: emerald, alt: "emerald", value: "EMERALD"},
+    {img: marquise, alt: "marquise", value: "MARQUISE"},
+    {img: heart, alt: "heart", value: "HEART"},
+    {img: pear, alt: "pear", value: "PEAR"},
+    {img: cushion, alt: "cushion", value: "CUSHION"},
+    {img: radiant, alt: "radiant", value: "RADIANT"},
+    {img: oval, alt: "oval", value: "OVAL"},
+    {img: princess, alt: "princess", value: "PRINCESS"}
+  ]
   return (
     <div className="shape-flex-container">
-    <div className="shape-item">
-      <img src={round} alt="round" />
-      <button onClick={handleClick('ROUND')}>ROUND</button>
+      {
+        shapeData.map((shape)=>(
+          <div className="shape-item" key={shape.alt}>
+            <img src={shape.img} alt={shape.alt} />
+            <button onClick={() => setVariable("shape", shape.value)}>{shape.value}</button>
+          </div>
+        ))
+      }    
     </div>
-    <div className="shape-item">
-      <img src={emerald} alt="emerald" />
-      <button  onClick={handleClick('EMERALD')}>EMERALD</button>
-    </div>
-    <div className="shape-item">
-      <img src={marquise} alt="marquise" />
-      <button onClick={handleClick('MARQUISE')}>MARQUISE</button>
-    </div>
-    <div className="shape-item">
-      <img src={heart} alt="heart" />
-      <button onClick={handleClick('HEART')}>HEART</button>
-    </div>
-    <div className="shape-item">
-      <img src={pear} alt="pear" />
-      <button onClick={handleClick('PEAR')}> PEAR</button>
-    </div>
-    <div className="shape-item">
-      <img src={cushion} alt="cushion" />
-      <button onClick={handleClick('CUSHION')}>CUSHION</button>
-    </div>
-    <div className="shape-item">
-      <img src={radiant} alt="radiant" />
-      <button onClick={handleClick('RADIANT')}>RADIANT</button>
-    </div>
-    <div className="shape-item">
-      <img src={oval} alt="oval" />
-      <button onClick={handleClick('OVAL')}>OVAL</button>
-    </div>
-    <div className="shape-item">
-      <img src={princess} alt="princess" />
-      <button onClick={handleClick('PRINCESS')}>PRINCESS</button>
-    </div>
-    
-  </div>
   )
 }
 
