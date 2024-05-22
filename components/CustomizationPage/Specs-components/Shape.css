@@ -13,6 +13,9 @@
 }
 
 .shape-item {
+  display: flex;
+  
+  flex-direction: column;
   will-change: opacity;
   animation: fadeIn 3s;
   text-align: center;
@@ -31,7 +34,7 @@
 
 .shape-item img {
   width: 100%; /* Adjust the image size as needed */
-  height: 110px;
+  height: 60%;
   object-fit: contain;
   margin-right: 5px;
   margin-left: 5px;
@@ -45,6 +48,7 @@
   font-family: josefin;
   color: #043A29;
   font-size: large;
+  margin-top: 10px;
 }
 
 .shape-item button:hover {
@@ -68,19 +72,23 @@
   }
 
   .shape-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 1 1 100%; /* Full width on smaller screens */
     margin-bottom: 15px; /* Reduce margin for smaller screens */
-    text-align: center;
+    height: 100%;
+    width: 100%;
   padding: 10px;
   }
 
   .shape-item img {
-    
-    height: auto; /* Let the height adjust automatically */
+    width: 100%;
+    height: 60%; /* Let the height adjust automatically */
     margin-bottom:10px;
   }
   .shape-item button {
-    text-align: start;
+    
     height: auto; /* Let the height adjust automatically */
     
   }

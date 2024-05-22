@@ -65,7 +65,7 @@
     }
   
     .clarity-item img {
-      height: auto; /* Let the height adjust automatically */
+      height: 10%; /* Let the height adjust automatically */
     }
   }
   

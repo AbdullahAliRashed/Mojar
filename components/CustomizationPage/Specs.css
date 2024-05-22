@@ -7,7 +7,7 @@
   
   .specs-buttons-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row;  
     justify-content: space-between;
     align-items: center;
   }
@@ -32,9 +32,7 @@
     will-change: opacity;
     opacity: 100%;
   }
-.rendered-container{
-  max-height: 300px;
-}  
+
   
   
   .separator {
