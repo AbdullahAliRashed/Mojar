@@ -1,10 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
+import axios from 'axios';
 import './Footer.css'; // Import your CSS file for styling
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   const footerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [email, setEmail] = useState('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,6 +30,28 @@ const Footer = () => {
       observer.disconnect();
     };
   }, []);
+
+
+  const handleInputChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    axios.defaults.xsrfCookieName = 'csrftoken';
+    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+    e.preventDefault();
+    console.log(email)
+    try {
+      axios.post('http://localhost:8000/Users/subscribe/', {email}, {
+        headers: {
+          'Content-Type': 'application/json',  // Set content type
+        },
+      });
+      setEmail('');
+    } catch (error) {
+      console.error('Error subscribing:', error);
+    }
+  };
 
   return (
     <footer className="footer" ref={footerRef}>
@@ -59,13 +83,16 @@ const Footer = () => {
         <div className={`footer-section subscribe ${isVisible ? 'visible' : ''}`}>
           <h3>SUBSCRIBE TO</h3>
           <span>NEWSLETTER</span>
-          <form>
+          <form onSubmit={handleSubmit}>
             <input 
               type="email" 
               name="email" 
               placeholder="Email" 
               className="custom-input"
+              value={email}
               onFocus={(e) => e.target.placeholder = ''}
+              onChange={handleInputChange}
+              
             />
             <button 
               type="submit" 

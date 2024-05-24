@@ -12,9 +12,6 @@ const Customization = () => {
       const containerTop = document.querySelector('.customization-container').getBoundingClientRect().top;
       const containerBottom = document.querySelector('.customization-container').getBoundingClientRect().bottom;
 
-      console.log('Container top:', containerTop);
-      console.log('Container bottom:', containerBottom);
-
       if (containerTop <= offset && containerBottom >= 0 && !isVisible) {
         setIsVisible(true);
       } else if ((containerTop > offset || containerBottom < 0) && isVisible) {
