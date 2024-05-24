@@ -7,23 +7,33 @@
   
   .specs-buttons-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row;  
     justify-content: space-between;
     align-items: center;
   }
   
   .specs-buttons-container button {
+    will-change: opacity, transform;
     border: none;
     background-color: transparent;
     cursor: pointer;
     font-family: josefin;
+    opacity: 40%;
     color: #043A29;
     font-size: large;
   }
-  
-  .specs-buttons-container button.selected {
-    font-weight: bolder;
+  .specs-buttons-container button:hover {
+    will-change: opacity, transform;
+    opacity: 80%;
+    
+    transition: transform 1.1s ease;
   }
+  .specs-buttons-container button:focus {
+    will-change: opacity;
+    opacity: 100%;
+  }
+
+  
   
   .separator {
     color: black;

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
 import './FormView.css';
 import cushion from '../../../assets/images/shapes/cushion.png';
 import emerald from '../../../assets/images/shapes/Emerald.png';
@@ -23,11 +24,25 @@ import vslightlyincluded2 from '../../../assets/images/clarity/vslightlyincluded
 import included from '../../../assets/images/clarity/included.png';
 import slightlyincluded from '../../../assets/images/clarity/slightlyincluded.png';
 
-const FormView = ({ shape, color, clarity, cut, carat, onBack1 }) => {
+
+const FormView = ({ material, shape, color, clarity, cut, carat, onBack1 }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [contactNumber, setContactNumber] = useState('');
 
+
+  const handleRequestCall = () => {
+    const params = { material, shape, color, clarity, cut, carat, name, email, contactNumber };
+    console.log(params);
+    // axios.get('https://yourapiurl.com/endpoint', { params })
+    //   .then(response => {
+    //     console.log('Data fetched successfully:', response.data);
+    //   })
+    //   .catch(error => {
+    //     console.error('Error fetching data:', error);
+    //   });
+  };
+  useEffect(handleRequestCall,[]);
   const getImage = (type, value) => {
     switch (type) {
       case 'shape':
@@ -124,7 +139,7 @@ const FormView = ({ shape, color, clarity, cut, carat, onBack1 }) => {
       </div>
       <div className="form-buttons">
         <button className="back-button1" onClick={onBack1}>Back</button>
-        <button className="request-call-button">Request a Call</button>
+        <button className="request-call-button" onClick={handleRequestCall}>Request a Call</button>
       </div>
     </div>
   );
