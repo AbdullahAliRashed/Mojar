@@ -3,11 +3,15 @@ import React from 'react';
 const ProductBox = ({ product }) => {
   return (
     <div className="product-box">
-      <img src={product.image} alt={product.name} className="product-image" />
-      <div className="product-details">
+      <div className='image-container'>
+        <img src={product.image} alt={product.name} className="product-image" />
+      </div>
+      <div className="product-box-details">
         <h3>{product.name}</h3>
-        <p>Type: {product.type}</p>
-        <p>Price: {product.price}</p>
+        <div className='details-container'>
+          <p>{product.description}</p>
+          <p>{product.price} EGP</p>
+        </div>
       </div>
     </div>
   );
