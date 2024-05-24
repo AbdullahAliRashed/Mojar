@@ -1,86 +1,110 @@
 .jewelry-page {
-    padding-top: 250px;
-    padding-bottom: 130px;
-    padding-left: 120px;
-    padding-right: 120px; /* Adjust according to the height of the navbar */
-    justify-content: center;
-    display: flex;
-  }
-  
-  .carousel {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    border-radius: 10px;
-  }
-  
-  .carousel .carousel-slider {
-    display: flex;
-    flex-direction: column; /* Display slides vertically */
-  }
-  
-  .carousel .slide {
-    flex: none; /* Prevent slides from stretching */
-  }
-  
-  .carousel img {
-    width: 50%;
-    height: 500px;
-    object-fit: fill; /* Change object-fit to 'contain' */
-  }
-  
+  padding-top: 250px;
+  padding-bottom: 130px;
+  padding-left: 120px;
+  padding-right: 120px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.carousel .carousel-slider {
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel .slide {
+  flex: none;
+}
+
+.carousel img {
+  width: 50%;
+  height: 500px;
+  object-fit: fill;
+}
+
+.product-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.product-grid::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
   .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-height: fit-content;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .product-grid::-webkit-scrollbar {
-    display: none; /* Hide the scrollbar */
-  }
-
-  @media (max-width: 768px) {
-    .product-grid  {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  .product-box {
-    transition: transform 0.3s ease;
-    display: flex;
     flex-direction: column;
-    width: 400px;
   }
-  
-  .product-box:hover {
-    transform: scale(1.05);
-  }
+}
 
-  .image-container {
-    width: 400px;
-    height: 320px; /* Set a specific height for the image */
-    border: 2px solid black;
-    cursor: pointer;
-  }
-  .product-image {
-    width: 100%;
-    height: 100%;
-  }
+.product-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
 
-  .product-box-details {
-    gap: 20px;
-  }
-  .details-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+.product-row.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  p {
-    margin:0;
+.product-row.fade-out {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+@media (max-width: 768px) {
+  .product-row {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+}
+
+.product-box {
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.product-box:hover {
+  transform: scale(1.05);
+}
+
+.image-container {
+  width: 400px;
+  height: 320px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+}
+
+.product-box-details {
+  gap: 20px;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+p {
+  margin: 0;
+}
