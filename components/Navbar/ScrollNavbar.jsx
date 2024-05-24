@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './ScrollNavbar.css'; 
 import Logo from './Logo';
+import SlideoutCart from './SlideoutCart';
 import SearchBar from './SearchBar';
 import mojarLogo from '../../assets/images/mojar logo-01.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 const ScrollNavbar = () => {
-
-
+  const [cartVisible, setCartVisible] = useState(false);
+  const toggleCart = () => setCartVisible(!cartVisible);
 
   return (
+    <>
     <nav className={`navbar`}>
       <div className="navbar-left">
       <SearchBar />
@@ -57,11 +59,13 @@ const ScrollNavbar = () => {
       <a href="/wishlist">
           <FontAwesomeIcon icon={faHeart} className="icon" />
         </a>
-        <a href="/cart">
-          <FontAwesomeIcon icon={faShoppingBag} className="icon" />
-        </a>
+        <button className="icon-button" onClick={toggleCart}>
+            <FontAwesomeIcon icon={faShoppingBag} className="icon" />
+        </button>
       </div>
     </nav>
+    <SlideoutCart show={cartVisible} onClose={toggleCart} />
+    </>
   );
 };
 

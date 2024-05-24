@@ -47,6 +47,23 @@
   transform: scale(1.1); /* Scale up on hover */
 }
 
+.icon-button {
+  background:none;
+  border: none;
+  cursor: pointer;
+}
+.icon{
+  color: #E5BD7F;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.icon :hover{
+  transform: scale(1.1);
+}
+
 .navbar-right svg {
   width: 20px; /* Set the width of the icons */
   height: 20px; /* Set the height of the icons */
@@ -171,6 +188,7 @@
   font-weight: bold; /* Make the titles bold */
   padding: 15px 20px; /* Add padding to the titles */
 }
+
 
 
 /* Adjustments for smaller screens */
