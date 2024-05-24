@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import productImage from '../../assets/images/ringo.png'; // Replace with your actual product image path
 
 const CartOverlay = styled.div`
   position: fixed;
@@ -10,7 +10,7 @@ const CartOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   display: ${props => (props.show ? 'block' : 'none')};
 `;
@@ -93,7 +93,7 @@ const RemoveButton = styled.button`
 const CheckoutButton = styled.button`
   width: 100%;
   padding: 10px;
-  background: #195E47;
+  background: black;
   border: none;
   cursor: pointer;
   font-size: 16px;
@@ -102,31 +102,19 @@ const CheckoutButton = styled.button`
 `;
 
 const SlideoutCart = ({ show, onClose }) => {
-  const initialProducts = [
-    {
-      id: 1,
-      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
-      quantity: 1,
-      image: productImage,
-    },
-    {
-      id: 2,
-      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
-      quantity: 1,
-      image: productImage,
-    },
-    {
-      id: 3,
-      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
-      quantity: 1,
-      image: productImage,
-    },
-  ];
+  const [products, setProducts] = useState([]);
 
-  const [products, setProducts] = useState(initialProducts);
+  useEffect(() => {
+    if (show) {
+      axios.get('https://api.example.com/cart') // Replace with your actual API endpoint
+        .then(response => {
+          setProducts(response.data);
+        })
+        .catch(error => {
+          console.error('Error fetching cart products:', error);
+        });
+    }
+  }, [show]);
 
   const incrementQuantity = (id) => {
     setProducts(products.map(product =>
@@ -183,7 +171,7 @@ const SlideoutCart = ({ show, onClose }) => {
           ))}
         </CartBody>
         <CartFooter>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', justifycontent: 'space-between' }}>
             <p>Subtotal</p>
             <p>LE {calculateSubtotal().toLocaleString()} EGP</p>
           </div>
