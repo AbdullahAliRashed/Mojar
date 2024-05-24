@@ -7,7 +7,7 @@ const LoopingV = () => {
 
     <video
       className="LoopingV"
-      src="../../assets/videos/jwl.mp4" // Path to your video
+      src="../../assets/videos/mojar graded.mp4" // Path to your video
       autoPlay
       loop
       muted

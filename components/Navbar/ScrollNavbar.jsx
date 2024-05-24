@@ -49,7 +49,7 @@ const ScrollNavbar = () => {
             </div>
           </li>
           <li><a href="/products">PRODUCTS</a></li>
-          <li><a href="/blog">BLOG</a></li>
+
           </ul>
         </div>
       </div>
