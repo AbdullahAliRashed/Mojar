@@ -9,26 +9,30 @@ import ProductBox from '../ProductsPage/ProductBox';
 import Customization from "../Customization/Customization";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { useLocation } from 'react-router-dom';
 
-const Product = ({ images, name, price ,ringSizes  }) => {
-  const product = {
-    "id": 1,
-    "name": "Diamond Bracelet",
-    "shape": "ROUND",
-    "color": "COLORLESS",
-    "clarity": "FLAWLESS",
-    "cut": "EXCELLENT TO GOOD",
-    "carat": "2.50",
-    "metal": "GOLD",
-    "product_type": "BRACELET",
-    "description": "Beautiful diamond bracelet with round diamonds",
-    "price": "5000.00",
-    "stock": 10,
-    "image": image1,
-    "collection": 1,
-    "created_on": "2024-05-20T10:30:00Z",
-    "updated_on": "2024-05-20T12:45:00Z"
-  }
+const Product = () => {
+  const location = useLocation();
+  const product = location.product || {};
+  console.log(product);
+  // const product = {
+  //   "id": 1,
+  //   "name": "Diamond Bracelet",
+  //   "shape": "ROUND",
+  //   "color": "COLORLESS",
+  //   "clarity": "FLAWLESS",
+  //   "cut": "EXCELLENT TO GOOD",
+  //   "carat": "2.50",
+  //   "metal": "GOLD",
+  //   "product_type": "BRACELET",
+  //   "description": "Beautiful diamond bracelet with round diamonds",
+  //   "price": "5000.00",
+  //   "stock": 10,
+  //   "image": image1,
+  //   "collection": 1,
+  //   "created_on": "2024-05-20T10:30:00Z",
+  //   "updated_on": "2024-05-20T12:45:00Z"
+  // }
 
   const similarProducts = [
     { id: 1, image: image1},
@@ -183,72 +187,78 @@ const Product = ({ images, name, price ,ringSizes  }) => {
     }
   ];
   // Ensure that images is always an array
-  const imagesArray = Array.isArray(images) ? images : [images];
+  // const imagesArray = Array.isArray(images) ? images : [images];
 
-  // State to track the index of the current main image in the slider
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [selectedRingSize, setSelectedRingSize] = useState(null);
-  // Function to handle click on the slider arrows
-  const handleSliderArrowClick = (direction) => {
-    if (direction === 'prev') {
-      setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1));
-    } else {
-      setCurrentImageIndex((prevIndex) => (prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1));
-    }
-  };
+  // // State to track the index of the current main image in the slider
+  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // const [selectedRingSize, setSelectedRingSize] = useState(null);
+  // // Function to handle click on the slider arrows
+  // const handleSliderArrowClick = (direction) => {
+  //   if (direction === 'prev') {
+  //     setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1));
+  //   } else {
+  //     setCurrentImageIndex((prevIndex) => (prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1));
+  //   }
+  // };
 
 
   return (
-    <div className='product-page'>
-      <div className="product">
-        <div className="product-content">
-          <div className="product-images">
-            <img
-              src={product.image}
-              alt={`${name} - Main Image`}
-              className="product-image-main"
-              />
-            {/* <div className="slider">
-              {imagesArray.map((image, index) => (
-                <img
-                key={index}
-                src={image}
-                alt={`${name} - Image ${index + 1}`}
-                className={`slider-image ${index === currentImageIndex ? 'active' : ''}`}
-                onClick={()=> setCurrentImageIndex(index)}
+      product ? (
+        <div className='product-page'>
+        <div className="product">
+          <div className="product-content">
+            <div className="product-images">
+              <img
+                src={product.image}
+                alt={`${name} - Main Image`}
+                className="product-image-main"
                 />
+              {/* <div className="slider">
+                {imagesArray.map((image, index) => (
+                  <img
+                  key={index}
+                  src={image}
+                  alt={`${name} - Image ${index + 1}`}
+                  className={`slider-image ${index === currentImageIndex ? 'active' : ''}`}
+                  onClick={()=> setCurrentImageIndex(index)}
+                  />
+                  ))}
+              </div> */}
+            </div>
+            <div className="product-details">
+              <div className='product-page-details-top-contaier'>
+                <p className="product-title">{product.name}</p>
+                <p className="product-description">{product.description}</p>
+                <div className='add-to-basket-container'>
+                    <p className='add-to-basket-text'>ADD TO BASKET</p>
+                    <FontAwesomeIcon icon={faHeart} className="favorite-icon" />
+                </div>
+              </div>
+              <div className='similar-container'>
+                {similarProducts.map(product => (
+                  <div key={product.id} className='similar-products-image-container'>
+                    <img src={product.image} className="similar-product-image" />
+                  </div>
                 ))}
-            </div> */}
-          </div>
-          <div className="product-details">
-            <div className='product-page-details-top-contaier'>
-              <p className="product-title">{product.name}</p>
-              <p className="product-description">{product.description}</p>
-              <div className='add-to-basket-container'>
-                  <p className='add-to-basket-text'>ADD TO BASKET</p>
-                  <FontAwesomeIcon icon={faHeart} className="favorite-icon" />
               </div>
             </div>
-            <div className='similar-container'>
-              {similarProducts.map(product => (
-                <div key={product.id} className='similar-products-image-container'>
-                  <img src={product.image} className="similar-product-image" />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
-      </div>
-      <div className={`you-may-also-like-container`}>
-        <h1 className="product-title">YOU MAY ALSO LIKE</h1>
-        <div className="may-also-like-product-grid">
-          {mayAlsoLikeProducts.map(product => (
-            <ProductBox key={product.id} product={product} />
-          ))}
+        <div className={`you-may-also-like-container`}>
+          <h1 className="product-title">YOU MAY ALSO LIKE</h1>
+          <div className="may-also-like-product-grid">
+            {mayAlsoLikeProducts.map(product => (
+              <ProductBox key={product.id} product={product} />
+            ))}
+          </div>
         </div>
+        <Customization/>
       </div>
-      <Customization/>
-    </div>
+      ) : (
+        <></>
+      )
+    
+    
   );
 };
 
