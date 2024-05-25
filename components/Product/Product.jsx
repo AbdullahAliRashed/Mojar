@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Product.css'; // Import the CSS for styling
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Import icons for slider
-import image1 from '../../assets/images/image1.jpeg';
-import image2 from '../../assets/images/image2.jpeg';
-import image3 from '../../assets/images/image3.jpeg';
-import image4 from '../../assets/images/image4.jpeg';
+import ReactImageMagnify from 'react-image-magnify'
 import necklace1 from '../../assets/images/products/necklace1.webp';
 import necklace1model from '../../assets/images/products/necklace1-model.webp';
 import necklace1alt from '../../assets/images/products/necklace1-alt.webp';
@@ -47,6 +44,19 @@ const Product = () => {
   const [cartVisible, setCartVisible] = useState(false);
   const toggleCart = () => setCartVisible(!cartVisible);
   const [wishVisible, setWishVisible] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const toggleWish = () => {
     setWishVisible(!wishVisible);
@@ -211,32 +221,45 @@ const Product = () => {
   const navigateToWishlist = () => {
     navigate('/wishlist');
   };
+
+  const smallImageWidth = windowWidth > 1024 ? 400 : (windowWidth === 768 ? 320 : (windowWidth > 768 ? 350 : windowWidth - 130));
+  const smallImageHeight = windowWidth > 1024 ? 430 : (windowWidth === 768 ? 300 : (windowWidth > 768 ? 380 : (windowWidth - 130) * 1.075));
+  const largeImageWidth = windowWidth > 1024 ? 1200 : (windowWidth > 768 ? 900 : windowWidth * 1.5);
+  const largeImageHeight = windowWidth > 1024 ? 1290 : (windowWidth > 768 ? 1140 : (windowWidth * 1.5) * 1.075);
+
   const [isHovered, setIsHovered] = useState(false);
   return (
       product ? (
         <div className='product-page'>
         <div className="product">
           <div className="product-content">
-            <div className="product-images"       
-
-            >
-              <img
-                src={imagesArray[currentImageIndex]}
-                alt={`${name} - Main Image`}
-                className="product-image-main"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                />
-              <div className={`slider ${isHovered ? "slider-disabled": ""}`}>
+          <div className="product-images">
+              <ReactImageMagnify
+                {...{
+                  smallImage: {
+                    src: imagesArray[currentImageIndex],
+                    width: smallImageWidth,
+                    height: smallImageHeight
+                  },
+                  largeImage: {
+                    src: imagesArray[currentImageIndex],
+                    width: largeImageWidth,
+                    height: largeImageHeight
+                  },
+                  isHintEnabled: true,
+                  enlargedImagePosition: 'over'
+                }}
+              />
+              <div className={`slider ${isHovered ? "slider-disabled" : ""}`}>
                 {imagesArray.map((image, index) => (
                   <img
                     key={index}
                     src={image}
-                    alt={`${name} - Image ${index + 1}`}
+                    alt={`${product.name} - Image ${index + 1}`}
                     className={`slider-image ${index === currentImageIndex ? 'active' : ''}`}
-                    onClick={()=> setCurrentImageIndex(index)}
+                    onClick={() => setCurrentImageIndex(index)}
                   />
-                  ))}
+                ))}
               </div>
             </div>
             <div className="product-details">

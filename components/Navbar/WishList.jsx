@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import productImage from '../../assets/images/ringo.png'; // Replace with your actual product image path
+import necklace2 from '../../assets/images/products/necklace2.webp';
 
 const WishlistOverlay = styled.div`
     position: fixed;
@@ -44,6 +45,7 @@ const WishlistHeader = styled.div`
 `;
 
 const WishlistBody = styled.div`
+    padding-top: 20px;
     padding-left: 20px;
     overflow-y: auto;
     height: 82%;
@@ -73,6 +75,7 @@ const Product = styled.div`
 `;
 
 const ProductImage = styled.img`
+padding-top: 20px;
   width: 50px;
   height: 50px;
 `;
@@ -145,39 +148,10 @@ const Wishlist = ({ show, onClose }) => {
   const initialProducts = [
     {
       id: 1,
-      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
+      name: 'Malony Collection 21K Gold Cardamom Cravate Necklace Grande',
+      price: 5000,
       quantity: 1,
-      image: productImage,
-    },
-    {
-      id: 2,
-      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
-      quantity: 1,
-      image: productImage,
-    },
-    {
-      id: 3,
-      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
-      quantity: 1,
-      image: productImage,
-    },
-    ,
-    {
-      id: 2,
-      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
-      quantity: 1,
-      image: productImage,
-    },
-    {
-      id: 3,
-      name: 'seif',
-      price: 656000,
-      quantity: 1,
-      image: productImage,
+      image: necklace2,
     },
   ];
 

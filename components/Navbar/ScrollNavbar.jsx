@@ -37,7 +37,7 @@ const ScrollNavbar = () => {
           <div className='submenu-wrapper'>
           <ul className="submenu">
             <div className="submenu-title">CREATIONS</div>
-            <li><a href="#">Necklaces</a></li>
+            <li><a href="/products">Necklaces</a></li>
             <li><a href="#">Bracelets</a></li>
             <li><a href="#">Rings</a></li>
             <li><a href="#">Earrings</a></li>

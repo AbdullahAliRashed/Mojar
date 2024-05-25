@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import productImage from '../../assets/images/ringo.png'; // Replace with your actual product image path
+import necklace1 from '../../assets/images/products/necklace1.webp';
 
 const CartOverlay = styled.div`
   position: fixed;
@@ -123,23 +124,9 @@ const SlideoutCart = ({ show, onClose }) => {
     {
       id: 1,
       name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
+      price: 5000,
       quantity: 1,
-      image: productImage,
-    },
-    {
-      id: 2,
-      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
-      quantity: 1,
-      image: productImage,
-    },
-    {
-      id: 3,
-      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
-      price: 656000,
-      quantity: 1,
-      image: productImage,
+      image: necklace1,
     },
   ];
 
