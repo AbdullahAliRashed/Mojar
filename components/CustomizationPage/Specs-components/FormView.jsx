@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './FormView.css';
 import cushion from '../../../assets/images/shapes/cushion.png';
@@ -59,6 +60,10 @@ const FormView = ({ material, shape, color, clarity, cut, carat, onBack1 }) => {
     });
   };
 
+
+  const handleRequestCall2 = () => {
+    history.push('/recommendation');
+  };
 
   useEffect(handleRequestCall,[]);
   const getImage = (type, value) => {
@@ -158,6 +163,11 @@ const FormView = ({ material, shape, color, clarity, cut, carat, onBack1 }) => {
       <div className="form-buttons">
         <button className="back-button1" onClick={onBack1}>Back</button>
         <button className="request-call-button" onClick={handleRequestCall}>Request a Call</button>
+        <Link to="/recommendation">
+            <button className='request-call-button'>
+              Our Recommendation
+            </button>
+          </Link>
       </div>
     </div>
   );

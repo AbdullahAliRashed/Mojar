@@ -85,6 +85,7 @@ const ProductDetails = styled.div`
 const ProductActions = styled.div`
   display: flex;
   align-items: center;
+  margin-top:10px;
 `;
 
 const Button = styled.button`

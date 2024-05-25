@@ -34,13 +34,7 @@ const Customize = () => {
 
         {!selectedOption && (
           <div>
-            <div className='moving-image'>
-             <img
-              src={ring}
-              alt={`Gold ring`}
-              className="ring-image"
-              />
-           </div>
+            <h1 style={{ color: '#043A29' }}>Craft Your Unique Identity</h1>
           <div className='buttons-container'>            
             <button onClick={() => {handleOptionClick('DIAMOND') ; setMaterial('DIAMOND')}}>DIAMOND</button>
             <span className="separator">|</span> {/* Vertical bar separator */}
