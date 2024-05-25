@@ -222,8 +222,8 @@ const Product = () => {
     navigate('/wishlist');
   };
 
-  const smallImageWidth = windowWidth > 1024 ? 400 : (windowWidth === 768 ? 320 : (windowWidth > 768 ? 350 : windowWidth - 130));
-  const smallImageHeight = windowWidth > 1024 ? 430 : (windowWidth === 768 ? 300 : (windowWidth > 768 ? 380 : (windowWidth - 130) * 1.075));
+  const smallImageWidth = windowWidth > 1024 ? 600 : (windowWidth === 768 ? 320 : (windowWidth > 768 ? 500 : windowWidth - 130));
+  const smallImageHeight = windowWidth > 1024 ? 600 : (windowWidth === 768 ? 300 : (windowWidth > 768 ? 500 : (windowWidth - 130) * 1.075));
   const largeImageWidth = windowWidth > 1024 ? 1200 : (windowWidth > 768 ? 900 : windowWidth * 1.5);
   const largeImageHeight = windowWidth > 1024 ? 1290 : (windowWidth > 768 ? 1140 : (windowWidth * 1.5) * 1.075);
 
@@ -233,45 +233,48 @@ const Product = () => {
         <div className='product-page'>
         <div className="product">
           <div className="product-content">
-          <div className="product-images">
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    src: imagesArray[currentImageIndex],
-                    width: smallImageWidth,
-                    height: smallImageHeight
-                  },
-                  largeImage: {
-                    src: imagesArray[currentImageIndex],
-                    width: largeImageWidth,
-                    height: largeImageHeight
-                  },
-                  isHintEnabled: true,
-                  enlargedImagePosition: 'over'
-                }}
-              />
+            <div className='product-images-container'>
+            <div className="product-images">
+                <ReactImageMagnify
+                  {...{
+                    smallImage: {
+                      src: imagesArray[currentImageIndex],
+                      width: smallImageWidth,
+                      height: smallImageHeight
+                    },
+                    largeImage: {
+                      src: imagesArray[currentImageIndex],
+                      width: largeImageWidth,
+                      height: largeImageHeight
+                    },
+                    isHintEnabled: true,
+                    enlargedImagePosition: 'over'
+                  }}
+                />
+              </div>
               <div className={`slider ${isHovered ? "slider-disabled" : ""}`}>
-                {imagesArray.map((image, index) => (
-                  <img
+                  {imagesArray.map((image, index) => (
+                    <img
                     key={index}
                     src={image}
                     alt={`${product.name} - Image ${index + 1}`}
                     className={`slider-image ${index === currentImageIndex ? 'active' : ''}`}
                     onClick={() => setCurrentImageIndex(index)}
-                  />
-                ))}
-              </div>
+                    />
+                    ))}
+                </div>
             </div>
+
             <div className="product-details">
               <div className='product-page-details-top-contaier'>
                 <p className="product-title">{product.name}</p>
                 <p className="product-description">{product.description}</p>
                 <p className="product-description">{product.price} EGP</p>
-                <div className='add-to-basket-container'>
+              </div>
+              <div className='add-to-basket-container'>
                     <p className='add-to-basket-text' onClick={toggleCart}>ADD TO BASKET</p>
                     <FontAwesomeIcon onClick={toggleWish} icon={faHeart} className="favorite-icon" />
                 </div>
-              </div>
             </div>
           </div>
         </div>
