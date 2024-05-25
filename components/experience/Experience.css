@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center; /* Center content horizontally */
     align-items: stretch;    /* Center content vertically */
+    transition: opacity 0.2s ease-in-out;
     
 
 }

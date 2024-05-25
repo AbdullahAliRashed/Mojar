@@ -62,8 +62,6 @@ const Footer = () => {
             <li><a href="#">Our Story</a></li>
             <li><a href="#">Where To Find Us</a></li>
             <li><a href="#">Frequently Asked Questions</a></li>
-            <li><a href="#">Ring Size Guide</a></li>
-            <li><a href="#">Contact Us</a></li>
           </ul>
         </div>
         <div className={`footer-section support ${isVisible ? 'visible' : ''}`}>

@@ -14,6 +14,7 @@
   justify-content: center; /* Centers the content */
   width: 100%; /* Changed to 100% for responsive layout */
   height: auto; /* Adjust height based on content */
+  transition: opacity 0.2s ease-in-out;
   gap: 20px; /* Space between items */
   overflow: hidden; /* Prevent overflow */
   padding: 20px; /* Reduced padding for smaller screens */

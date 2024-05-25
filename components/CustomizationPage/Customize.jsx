@@ -21,14 +21,14 @@ const Customize = () => {
 
   return (
     <div className='customization-page'>
-      <div className='logo-container'>
+      {/* <div className='logo-container'>
         <img
           src={mojargreenlogofull}
           alt={`Mojar Logo`}
           className="mojar-logo-full"
         />
         
-      </div>
+      </div> */}
      
       <div className='options-container'>
 

@@ -6,6 +6,7 @@ import HomePage from './Route/HomePage';
 import ProductsPageRoute from './Route/ProductsPageRoute';
 import ProductPage from './Route/ProductPage';
 import CustomizationPage from './Route/CustomizationPage';
+import WishListPage from './Route/WishListPage';
 const App = () => {
   return (
     <div>
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/products" element={<ProductsPageRoute />} /> {/* Products page */}
           <Route path="/Product" element={<ProductPage/>}/> {/*Product Page*/}
           <Route path="/customize" element={<CustomizationPage/>}/> {/*customize Page*/}
+          <Route path="/wishlist" element={<WishListPage/>}/> {/*customize Page*/}
         </Routes>
         <Footer/>
       </div>

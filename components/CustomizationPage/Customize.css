@@ -18,7 +18,8 @@
     background-color: #F4DCBD;
     display: flex;
     flex-direction: column;
-    padding-top: 400px;
+    padding-top: 300px;
+    padding-bottom: 250px;
     
 }
 .logo-container{

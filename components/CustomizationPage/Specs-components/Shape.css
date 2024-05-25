@@ -13,14 +13,10 @@
 }
 
 .shape-item {
+  will-change: opacity;
   animation: fadeIn 3s;
   text-align: center;
-  margin-bottom: 20px; /* Adjust the margin as needed */
-  font-weight: bold;
-  transition: transform 1.1s ease;
-  flex: 1 1 auto; /* Allow items to grow and shrink */
-  box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
-  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .shape-item img:hover {
@@ -32,22 +28,26 @@
   width: 100%; /* Adjust the image size as needed */
   height: 110px;
   object-fit: contain;
-  margin-right: 5px;
-  margin-left: 5px;
 }
 
 .shape-item button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  opacity: 50%;
   font-family: josefin;
   color: #043A29;
   font-size: large;
 }
 
 .shape-item button:hover {
-  font-weight: bold;
+  will-change: opacity, transform;
+  opacity: 80%;  
   transition: transform 1.1s ease;
+}
+.shape-item button:focus {
+  will-change: opacity;
+  opacity: 100%;
 }
 
 /* Media Queries for Mobile Responsiveness */
@@ -60,20 +60,26 @@
   }
 
   .shape-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 1 1 100%; /* Full width on smaller screens */
     margin-bottom: 15px; /* Reduce margin for smaller screens */
-    text-align: center;
+    height: 100%;
+    width: 100%;
   padding: 10px;
   }
 
   .shape-item img {
-    
-    height: auto; /* Let the height adjust automatically */
+    width: 100%;
+    height: 60%; /* Let the height adjust automatically */
     margin-bottom:10px;
   }
   .shape-item button {
-    text-align: start;
+    
     height: auto; /* Let the height adjust automatically */
     
   }
+
+
 }

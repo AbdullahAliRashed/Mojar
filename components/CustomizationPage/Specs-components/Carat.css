@@ -1,35 +1,36 @@
 .carat-flex-container{
-    display: flex;
-    justify-content: space-between; /* Adjust as needed */
-    flex-direction: row;
-    margin-top: 40px;
-    padding-left: 10%;
-    padding-right: 10%;
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  flex-direction: row;
+  margin-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .carat-item {
-    animation: fadeIn 3s;
-    text-align: center;
-    margin-bottom: 20px; /* Adjust the margin as needed */
-    margin-top: 30px;
-  }
- 
-  .carat-item img {
-    width: 100%; /* Adjust the image size as needed */
-    height: 110px;
-    object-fit: contain;
+  will-change: opacity;
+  animation: fadeIn 3s;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  }
-  .slider1 {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 20px;
+.carat-item img {
+  width: 100%; /* Adjust the image size as needed */
+  height: 110px;
+  object-fit: contain;
+
+}
+
+.slider1 {
+  width: 80%;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .value-display {
-    font-size: 24px;
-    margin-bottom: 20px;
+  font-size: 24px;
+  
 }
 
 .value-display span {
-    font-size: 16px;
+  font-size: 16px;
 }

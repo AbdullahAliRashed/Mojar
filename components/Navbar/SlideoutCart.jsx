@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+/* SlideoutCart.jsx */
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import productImage from '../../assets/images/ringo.png'; // Replace with your actual product image path
 
 const CartOverlay = styled.div`
   position: fixed;
@@ -10,7 +11,7 @@ const CartOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   display: ${props => (props.show ? 'block' : 'none')};
 `;
@@ -78,6 +79,11 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 20px;
   margin: 0 10px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: white;
+  }
 `;
 
 const RemoveButton = styled.button`
@@ -88,33 +94,56 @@ const RemoveButton = styled.button`
   font-size: 14px;
   margin-left: 10px;
   text-decoration: underline;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const CheckoutButton = styled.button`
   width: 100%;
   padding: 10px;
-  background: black;
+  background: #195E47;
   border: none;
   cursor: pointer;
   font-size: 16px;
   color: white;
   text-transform: uppercase;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const SlideoutCart = ({ show, onClose }) => {
-  const [products, setProducts] = useState([]);
+  const initialProducts = [
+    {
+      id: 1,
+      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
+      price: 656000,
+      quantity: 1,
+      image: productImage,
+    },
+    {
+      id: 2,
+      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
+      price: 656000,
+      quantity: 1,
+      image: productImage,
+    },
+    {
+      id: 3,
+      name: 'Noccioline Collection 21K Gold Cardamom Cravate Necklace Grande',
+      price: 656000,
+      quantity: 1,
+      image: productImage,
+    },
+  ];
 
-  useEffect(() => {
-    if (show) {
-      axios.get('https://api.example.com/cart') // Replace with your actual API endpoint
-        .then(response => {
-          setProducts(response.data);
-        })
-        .catch(error => {
-          console.error('Error fetching cart products:', error);
-        });
-    }
-  }, [show]);
+  const [products, setProducts] = useState(initialProducts);
 
   const incrementQuantity = (id) => {
     setProducts(products.map(product =>
@@ -147,7 +176,7 @@ const SlideoutCart = ({ show, onClose }) => {
       <CartContainer show={show}>
         <CartHeader>
           <h2>Your Cart</h2>
-          <FontAwesomeIcon icon={faChevronRight} onClick={onClose} />
+          <FontAwesomeIcon icon={faChevronRight} onClick={onClose} style={{ cursor: 'pointer', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = 'white'} onMouseOut={(e) => e.target.style.color = ''} />
         </CartHeader>
         <CartBody>
           {products.map(product => (
@@ -171,7 +200,7 @@ const SlideoutCart = ({ show, onClose }) => {
           ))}
         </CartBody>
         <CartFooter>
-          <div style={{ display: 'flex', justifycontent: 'space-between' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <p>Subtotal</p>
             <p>LE {calculateSubtotal().toLocaleString()} EGP</p>
           </div>

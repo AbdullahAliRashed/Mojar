@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './ScrollNavbar.css'; 
 import Logo from './Logo';
+import Wishlist from './WishList';
 import SlideoutCart from './SlideoutCart';
 import SearchBar from './SearchBar';
 import mojarLogo from '../../assets/images/mojar logo-01.png';
@@ -10,6 +11,13 @@ import { faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 const ScrollNavbar = () => {
   const [cartVisible, setCartVisible] = useState(false);
   const toggleCart = () => setCartVisible(!cartVisible);
+  const [wishVisible, setWishVisible] = useState(false);
+
+  const toggleWish = () => {
+    setWishVisible(!wishVisible);
+    // Close the cart when wishlist is toggled
+    setCartVisible(false);
+  };
 
   return (
     <>
@@ -51,19 +59,21 @@ const ScrollNavbar = () => {
             </div>
           </li>
           <li><a href="/products">PRODUCTS</a></li>
-
+          <li><a href="/customize">CUSTOMIZE</a></li>
           </ul>
         </div>
       </div>
       <div className="navbar-right">
-      <a href="/wishlist">
-          <FontAwesomeIcon icon={faHeart} className="icon" />
-        </a>
+
+        <button className="icon-button" onClick={toggleWish}>
+            <FontAwesomeIcon icon={faHeart} className="icon" />
+        </button>
         <button className="icon-button" onClick={toggleCart}>
             <FontAwesomeIcon icon={faShoppingBag} className="icon" />
         </button>
       </div>
     </nav>
+    {wishVisible && <Wishlist show={wishVisible} onClose={toggleWish} />}
     <SlideoutCart show={cartVisible} onClose={toggleCart} />
     </>
   );

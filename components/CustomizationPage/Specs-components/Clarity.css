@@ -1,63 +1,71 @@
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.clarity-flex-container {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  flex-direction: row;
+  margin-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
   
+}
+
+.clarity-item {
+  will-change: opacity;
+  animation: fadeIn 3s;
+  text-align: center;
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.clarity-item img {
+  width: 100%; /* Adjust the image size as needed */
+  height: 110px;
+  object-fit: contain;
+}
+
+.clarity-item img:hover {
+  transform: scale(1.05);
+  transition: transform 1.1s ease;
+}
+
+
+.clarity-item button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 50%;
+  font-family: josefin;
+  color: #043A29;
+  font-size: large;
+}
+
+.clarity-item button:hover {
+  will-change: opacity, transform;
+  opacity: 80%;
+  
+  transition: transform 1.1s ease;
+}
+.clarity-item button:focus {
+  will-change: opacity;
+  opacity: 100%;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
   .clarity-flex-container {
-    display: flex;
-    justify-content: space-between; /* Adjust as needed */
-    flex-direction: row;
-    margin-top: 40px;
-    padding-left: 10%;
-    padding-right: 10%;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    padding-left: 30%;
+    padding-right: 30%;
   }
-  
+
   .clarity-item {
-    animation: fadeIn 3s;
-    text-align: center;
-    margin-bottom: 20px; /* Adjust the margin as needed */
+    margin-bottom: 15px; /* Reduce margin for smaller screens */
   }
-  
+
   .clarity-item img {
-    width: 100%; /* Adjust the image size as needed */
-    height: 110px;
-    object-fit: contain;
+    height: 10%; /* Let the height adjust automatically */
   }
-  
-  .clarity-item img:hover {
-    transform: scale(1.05);
-    transition: transform 1.1s ease;
-  }
-  
-  .clarity-item button:hover {
-    font-weight: bold;
-    transition: transform 1.1s ease;
-  }
-  
-  .clarity-item button {
-    margin-top: 10px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-family: josefin;
-    color: #043A29;
-    font-size: medium;
-  }
-  
-  /* Media Queries for Mobile Responsiveness */
-  @media (max-width: 768px) {
-    .clarity-flex-container {
-      flex-direction: column; /* Stack items vertically on smaller screens */
-      padding-left: 30%;
-      padding-right: 30%;
-    }
-  
-    .clarity-item {
-      margin-bottom: 15px; /* Reduce margin for smaller screens */
-    }
-  
-    .clarity-item img {
-      height: auto; /* Let the height adjust automatically */
-    }
-  }
-  
+}
