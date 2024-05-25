@@ -5,63 +5,79 @@ import image1 from '../../assets/images/image1.jpeg';
 import image2 from '../../assets/images/image2.jpeg';
 import image3 from '../../assets/images/image3.jpeg';
 import image4 from '../../assets/images/image4.jpeg';
+import necklace1 from '../../assets/images/products/necklace1.webp';
+import necklace1model from '../../assets/images/products/necklace1-model.webp';
+import necklace1alt from '../../assets/images/products/necklace1-alt.webp';
+import necklace2 from '../../assets/images/products/necklace2.webp';
+import necklace2model from '../../assets/images/products/necklace2-model.webp';
+import necklace2alt from '../../assets/images/products/necklace2-alt.webp';
+
+import necklace3 from '../../assets/images/products/necklace3.webp';
+import necklace3model from '../../assets/images/products/necklace3-model.webp';
+import necklace3alt from '../../assets/images/products/necklace3-alt.webp';
+
+import necklace4 from '../../assets/images/products/necklace4.webp';
+import necklace4model from '../../assets/images/products/necklace4-model.webp';
+import necklace4alt from '../../assets/images/products/necklace4-alt.webp';
+
+import necklace5 from '../../assets/images/products/necklace5.webp';
+import necklace5model from '../../assets/images/products/necklace5-model.webp';
+import necklace5alt from '../../assets/images/products/necklace5-alt.webp';
+
+import necklace6 from '../../assets/images/products/necklace6.webp';
+import necklace6model from '../../assets/images/products/necklace6-model.webp';
+import necklace6alt from '../../assets/images/products/necklace6-alt.webp';
+
+import necklace7 from '../../assets/images/products/necklace7.webp';
+import necklace7model from '../../assets/images/products/necklace7-model.webp';
+import necklace7alt from '../../assets/images/products/necklace7-alt.webp';
+
+import necklace8 from '../../assets/images/products/necklace8.webp';
+import necklace8model from '../../assets/images/products/necklace8-model.webp';
+import necklace8alt from '../../assets/images/products/necklace8-alt.webp';
 import ProductBox from '../ProductsPage/ProductBox';
 import Customization from "../Customization/Customization";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Wishlist from '../Navbar/WishList';
+import SlideoutCart from '../Navbar/SlideoutCart';
 
 const Product = () => {
-  const location = useLocation();
-  const product = location.product || {};
-  console.log(product);
-  // const product = {
-  //   "id": 1,
-  //   "name": "Diamond Bracelet",
-  //   "shape": "ROUND",
-  //   "color": "COLORLESS",
-  //   "clarity": "FLAWLESS",
-  //   "cut": "EXCELLENT TO GOOD",
-  //   "carat": "2.50",
-  //   "metal": "GOLD",
-  //   "product_type": "BRACELET",
-  //   "description": "Beautiful diamond bracelet with round diamonds",
-  //   "price": "5000.00",
-  //   "stock": 10,
-  //   "image": image1,
-  //   "collection": 1,
-  //   "created_on": "2024-05-20T10:30:00Z",
-  //   "updated_on": "2024-05-20T12:45:00Z"
-  // }
+  const [cartVisible, setCartVisible] = useState(false);
+  const toggleCart = () => setCartVisible(!cartVisible);
+  const [wishVisible, setWishVisible] = useState(false);
 
-  const similarProducts = [
-    { id: 1, image: image1},
-    { id: 2, image: image2},
-    { id: 3, image: image3},
-  ]
+  const toggleWish = () => {
+    setWishVisible(!wishVisible);
+    // Close the cart when wishlist is toggled
+    setCartVisible(false);
+  };
+
+  const product = {
+    "id": 1,
+    "name": "Circle Pendant",
+    "shape": "ROUND",
+    "color": "COLORLESS",
+    "clarity": "FLAWLESS",
+    "cut": "EXCELLENT TO GOOD",
+    "carat": "2.50",
+    "metal": "GOLD",
+    "product_type": "BRACELET",
+    "description": "Circle Pendant in gold",
+    "price": "5000.00",
+    "stock": 10,
+    "image": [necklace1,necklace1alt,necklace1model],
+    "collection": 1,
+    "created_on": "2024-05-20T10:30:00Z",
+    "updated_on": "2024-05-20T12:45:00Z"
+  }
+
 
   const mayAlsoLikeProducts = [
     {
-      "id": 1,
-      "name": "Diamond Bracelet",
-      "shape": "ROUND",
-      "color": "COLORLESS",
-      "clarity": "FLAWLESS",
-      "cut": "EXCELLENT TO GOOD",
-      "carat": "2.50",
-      "metal": "GOLD",
-      "product_type": "BRACELET",
-      "description": "Beautiful diamond bracelet with round diamonds",
-      "price": "5000.00",
-      "stock": 10,
-      "image": image1,
-      "collection": 1,
-      "created_on": "2024-05-20T10:30:00Z",
-      "updated_on": "2024-05-20T12:45:00Z"
-    },
-    {
       "id": 2,
-      "name": "Diamond Bracelet",
+      "name": "Smile Bendant",
       "shape": "ROUND",
       "color": "COLORLESS",
       "clarity": "FLAWLESS",
@@ -69,17 +85,17 @@ const Product = () => {
       "carat": "2.50",
       "metal": "GOLD",
       "product_type": "BRACELET",
-      "description": "Beautiful diamond bracelet with round diamonds",
+      "description": "Smile Pendant in Yellow Gold, Small",
       "price": "5000.00",
       "stock": 10,
-      "image": image2,
+      "image": [necklace2,necklace2model,necklace2alt],
       "collection": 1,
       "created_on": "2024-05-20T10:30:00Z",
       "updated_on": "2024-05-20T12:45:00Z"
     },
     {
       "id": 3,
-      "name": "Diamond Bracelet",
+      "name": "HardWear Medium Link",
       "shape": "ROUND",
       "color": "COLORLESS",
       "clarity": "FLAWLESS",
@@ -87,17 +103,17 @@ const Product = () => {
       "carat": "2.50",
       "metal": "GOLD",
       "product_type": "BRACELET",
-      "description": "Beautiful diamond bracelet with round diamonds",
+      "description": "HardWear Medium Link Necklace in Yellow Gold",
       "price": "5000.00",
       "stock": 10,
-      "image": image4,
+      "image": [necklace3,necklace3model,necklace3alt],
       "collection": 1,
       "created_on": "2024-05-20T10:30:00Z",
       "updated_on": "2024-05-20T12:45:00Z"
     },
     {
       "id": 4,
-      "name": "Diamond Bracelet",
+      "name": "Lock Pendant",
       "shape": "ROUND",
       "color": "COLORLESS",
       "clarity": "FLAWLESS",
@@ -105,17 +121,17 @@ const Product = () => {
       "carat": "2.50",
       "metal": "GOLD",
       "product_type": "BRACELET",
-      "description": "Beautiful diamond bracelet with round diamonds",
+      "description": "Lock Pendant in Yellow Gold with Diamonds, Medium",
       "price": "5000.00",
       "stock": 10,
-      "image": image1,
+      "image": [necklace4,necklace4model,necklace4alt],
       "collection": 1,
       "created_on": "2024-05-20T10:30:00Z",
       "updated_on": "2024-05-20T12:45:00Z"
     },
     {
       "id": 5,
-      "name": "Diamond Bracelet",
+      "name": "Lock Pendant with diamonds",
       "shape": "ROUND",
       "color": "COLORLESS",
       "clarity": "FLAWLESS",
@@ -123,17 +139,17 @@ const Product = () => {
       "carat": "2.50",
       "metal": "GOLD",
       "product_type": "BRACELET",
-      "description": "Beautiful diamond bracelet with round diamonds",
+      "description": "Lock Pendant in Yellow Gold with Pavé Diamonds, Medium",
       "price": "5000.00",
       "stock": 10,
-      "image": image2,
+      "image": [necklace5,necklace5model,necklace5alt],
       "collection": 1,
       "created_on": "2024-05-20T10:30:00Z",
       "updated_on": "2024-05-20T12:45:00Z"
     },
     {
       "id": 6,
-      "name": "Diamond Bracelet",
+      "name": "Knot Pendant",
       "shape": "ROUND",
       "color": "COLORLESS",
       "clarity": "FLAWLESS",
@@ -141,17 +157,17 @@ const Product = () => {
       "carat": "2.50",
       "metal": "GOLD",
       "product_type": "BRACELET",
-      "description": "Beautiful diamond bracelet with round diamonds",
+      "description": "Knot Pendant in Yellow Gold",
       "price": "5000.00",
       "stock": 10,
-      "image": image3,
+      "image": [necklace6,necklace6model,necklace6alt],
       "collection": 1,
       "created_on": "2024-05-20T10:30:00Z",
       "updated_on": "2024-05-20T12:45:00Z"
     },
     {
       "id": 7,
-      "name": "Diamond Bracelet",
+      "name": "Open Heart Pendant",
       "shape": "ROUND",
       "color": "COLORLESS",
       "clarity": "FLAWLESS",
@@ -159,17 +175,17 @@ const Product = () => {
       "carat": "2.50",
       "metal": "GOLD",
       "product_type": "BRACELET",
-      "description": "Beautiful diamond bracelet with round diamonds",
+      "description": "Open Heart Pendant in Yellow Gold, 11 mm",
       "price": "5000.00",
       "stock": 10,
-      "image": image4,
+      "image": [necklace7,necklace7model,necklace7alt],
       "collection": 1,
       "created_on": "2024-05-20T10:30:00Z",
       "updated_on": "2024-05-20T12:45:00Z"
     },
     {
       "id": 8,
-      "name": "Diamond Bracelet",
+      "name": "Mini Heart Tag Pendant",
       "shape": "ROUND",
       "color": "COLORLESS",
       "clarity": "FLAWLESS",
@@ -177,69 +193,61 @@ const Product = () => {
       "carat": "2.50",
       "metal": "GOLD",
       "product_type": "BRACELET",
-      "description": "Beautiful diamond bracelet with round diamonds",
+      "description": "Mini Heart Tag Pendant in Yellow Gold",
       "price": "5000.00",
       "stock": 10,
-      "image": image2,
+      "image": [necklace8,necklace8model,necklace8alt],
       "collection": 1,
       "created_on": "2024-05-20T10:30:00Z",
       "updated_on": "2024-05-20T12:45:00Z"
     }
   ];
-  // Ensure that images is always an array
-  // const imagesArray = Array.isArray(images) ? images : [images];
+  const imagesArray = product.image;
 
-  // // State to track the index of the current main image in the slider
-  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  // const [selectedRingSize, setSelectedRingSize] = useState(null);
-  // // Function to handle click on the slider arrows
-  // const handleSliderArrowClick = (direction) => {
-  //   if (direction === 'prev') {
-  //     setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1));
-  //   } else {
-  //     setCurrentImageIndex((prevIndex) => (prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1));
-  //   }
-  // };
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const navigate = useNavigate();
 
+  const navigateToWishlist = () => {
+    navigate('/wishlist');
+  };
+  const [isHovered, setIsHovered] = useState(false);
   return (
       product ? (
         <div className='product-page'>
         <div className="product">
           <div className="product-content">
-            <div className="product-images">
+            <div className="product-images"       
+
+            >
               <img
-                src={image1}
+                src={imagesArray[currentImageIndex]}
                 alt={`${name} - Main Image`}
                 className="product-image-main"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
                 />
-              {/* <div className="slider">
+              <div className={`slider ${isHovered ? "slider-disabled": ""}`}>
                 {imagesArray.map((image, index) => (
                   <img
-                  key={index}
-                  src={image}
-                  alt={`${name} - Image ${index + 1}`}
-                  className={`slider-image ${index === currentImageIndex ? 'active' : ''}`}
-                  onClick={()=> setCurrentImageIndex(index)}
+                    key={index}
+                    src={image}
+                    alt={`${name} - Image ${index + 1}`}
+                    className={`slider-image ${index === currentImageIndex ? 'active' : ''}`}
+                    onClick={()=> setCurrentImageIndex(index)}
                   />
                   ))}
-              </div> */}
+              </div>
             </div>
             <div className="product-details">
               <div className='product-page-details-top-contaier'>
                 <p className="product-title">{product.name}</p>
                 <p className="product-description">{product.description}</p>
+                <p className="product-description">{product.price} EGP</p>
                 <div className='add-to-basket-container'>
-                    <p className='add-to-basket-text'>ADD TO BASKET</p>
-                    <FontAwesomeIcon icon={faHeart} className="favorite-icon" />
+                    <p className='add-to-basket-text' onClick={toggleCart}>ADD TO BASKET</p>
+                    <FontAwesomeIcon onClick={toggleWish} icon={faHeart} className="favorite-icon" />
                 </div>
-              </div>
-              <div className='similar-container'>
-                {similarProducts.map(product => (
-                  <div key={product.id} className='similar-products-image-container'>
-                    <img src={product.image} className="similar-product-image" />
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -248,11 +256,13 @@ const Product = () => {
           <h1 className="product-title">YOU MAY ALSO LIKE</h1>
           <div className="may-also-like-product-grid">
             {mayAlsoLikeProducts.map(product => (
-              <ProductBox key={product.id} product={product} />
+              <ProductBox toggleCart={toggleCart} toggleWish={toggleWish} key={product.id} product={product} />
             ))}
           </div>
         </div>
         <Customization/>
+        {wishVisible && <Wishlist show={wishVisible} onClose={toggleWish} />}
+        <SlideoutCart show={cartVisible} onClose={toggleCart} />
       </div>
       ) : (
         <></>
