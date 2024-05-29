@@ -31,7 +31,9 @@
     "react-image-magnify": "^2.7.4",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.23.0",
+    "react-slick": "^0.30.2",
     "rsuite": "^5.60.2",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.11"
   }
 }

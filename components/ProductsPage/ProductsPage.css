@@ -1,41 +1,15 @@
 .jewelry-page {
-  padding-top: 250px;
-  padding-bottom: 130px;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-top: 250px; 
   justify-content: center;
   display: flex;
   flex-direction: column;
   background-color: #f3e3cd;
 }
 
-.carousel {
-  width: 100%;
-  height: 500px;
-  position: relative;
-  border-radius: 10px;
-}
-
-.carousel .carousel-slider {
-  display: flex;
-  flex-direction: column;
-}
-
-.carousel .slide {
-  flex: none;
-}
-
-.carousel img {
-  width: 50%;
-  height: 500px;
-  object-fit: fill;
-}
-
 .product-grid {
-  display: flex;
+  padding-left: 4%;
   flex-direction: column;
-  gap: 40px;
-  width: 100%;
+  display: flex;
 }
 
 .product-grid::-webkit-scrollbar {
@@ -49,12 +23,13 @@
 }
 
 .product-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease-out, transform 1s ease-out;
+  width: 100%;
 }
 
 .product-row.fade-in {
@@ -68,32 +43,44 @@
 }
 
 @media (max-width: 768px) {
+  .add-to-basket{
+    margin-right: 8px;
+  }
   .product-row {
     grid-template-columns: repeat(2, 1fr);
   }
+  
 }
 
 .product-box {
+  width: 22%; /* Adjust width to fit 4 boxes */
+  margin: 1%; /* Adjust margin to fit 4 boxes */
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: space-between; /* Ensure content is spaced evenly */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
 }
 
-.product-box:hover {
+/* .product-box:hover {
   transform: scale(1.05);
-}
+} */
 
 .image-container {
   position: relative;
-  width: 400px;
-  height: 320px;
-  border: 2px solid black;
+  width: 100%;
+  height: 25vw;
+  max-height: 430px;
+  border: none;
+  border-radius: 0;
   cursor: pointer;
 }
 
 .overlay-image {
+  object-fit: cover;
   position: absolute;
+  border-radius: 0px;
   top: 0;
   left: 0;
   width: 100%;
@@ -106,11 +93,13 @@
   opacity: 1; /* Show on hover */
 }
 
-.product-box:hover .product-image {
+.product-box:hover .product-image1 {
   opacity: 0; /* Hide original image on hover */
 }
 
-.product-image {
+.product-image1 {
+  object-fit: cover;
+  border-radius: 0px;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -119,10 +108,11 @@
 }
 
 .product-box-details {
-  gap: 20px;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  justify-content: space-between; /* Ensure content is spaced evenly */
+  flex-grow: 1; /* Allow it to grow to fill available space */
+  padding: 10px 0; /* Add padding for better spacing */
 }
 
 .details-container {
@@ -133,4 +123,36 @@
 
 p {
   margin: 0;
+}
+
+.add-to-basket {
+  margin-top: auto; /* Push the button to the bottom */ 
+  align-self: flex-end; /* Align the button to the end of the container */
+  padding: 10px 20px; /* Add padding for better appearance */
+  background-color: #195E47; /* Example background color */
+  color: #fff; /* Example text color */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease; /* Add transition for hover effect */
+}
+.add-to-basket-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.favorite-icon{
+  transition: color 0.3s ease; /* Smooth transition */
+  color: black;
+  transition: color 0.3s ease; /* Smooth transition */
+  font-size: 1.5rem; /* Adjust size as needed */
+  cursor: pointer;
+}
+.favorite-icon:hover{
+  color: red;
+}
+
+.add-to-basket:hover {
+  background-color: black; /* Example hover background color */
 }

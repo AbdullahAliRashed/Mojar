@@ -218,8 +218,8 @@ const ProductsPage = () => {
 
   const getProductRows = () => {
     const rows = [];
-    for (let i = 0; i < products.length; i += 3) {
-      rows.push(products.slice(i, i + 3));
+    for (let i = 0; i < products.length; i += 4) {
+      rows.push(products.slice(i, i + 4));
     }
     return rows;
   };
@@ -230,18 +230,12 @@ const ProductsPage = () => {
 
   const toggleWish = () => {
     setWishVisible(!wishVisible);
-    // Close the cart when wishlist is toggled
     setCartVisible(false);
   };
 
   return (
     <div className="jewelry-page">
-      {/* <img src={carouselImage2} alt="Carousel Image 2" /> */}
       <div className="product-grid">
-        {/* {products.map(product => (
-          <ProductBox key={product.id} product={product} />
-        ))} */}
-
         {getProductRows().map((row, index) => (
           <div key={index} className="product-row fade-out" ref={el => (rowRefs.current[index] = el)}>
             {row.map(product => (
@@ -249,10 +243,9 @@ const ProductsPage = () => {
             ))}
           </div>
         ))}
-
       </div>
       {wishVisible && <Wishlist show={wishVisible} onClose={toggleWish} />}
-        <SlideoutCart show={cartVisible} onClose={toggleCart} />
+      <SlideoutCart show={cartVisible} onClose={toggleCart} />
     </div>
   );
 };

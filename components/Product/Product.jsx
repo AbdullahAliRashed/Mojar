@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Product.css'; // Import the CSS for styling
+import '../ProductsPage/ProductsPage.css'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Import icons for slider
 import ReactImageMagnify from 'react-image-magnify'
 import necklace1 from '../../assets/images/products/necklace1.webp';
@@ -8,7 +9,7 @@ import necklace1alt from '../../assets/images/products/necklace1-alt.webp';
 import necklace2 from '../../assets/images/products/necklace2.webp';
 import necklace2model from '../../assets/images/products/necklace2-model.webp';
 import necklace2alt from '../../assets/images/products/necklace2-alt.webp';
-
+import quality from '../../assets/images/quality.png'
 import necklace3 from '../../assets/images/products/necklace3.webp';
 import necklace3model from '../../assets/images/products/necklace3-model.webp';
 import necklace3alt from '../../assets/images/products/necklace3-alt.webp';
@@ -35,7 +36,7 @@ import necklace8alt from '../../assets/images/products/necklace8-alt.webp';
 import ProductBox from '../ProductsPage/ProductBox';
 import Customization from "../Customization/Customization";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import Wishlist from '../Navbar/WishList';
 import SlideoutCart from '../Navbar/SlideoutCart';
@@ -74,7 +75,7 @@ const Product = () => {
     "carat": "2.50",
     "metal": "GOLD",
     "product_type": "BRACELET",
-    "description": "Circle Pendant in gold",
+    "description": "A free-flowing cascade of textured miniature nuggets and pebbles attached together by joints that allow movement. The lightweight earring separates into two clustered strands that express the untamed beauty of nature’s riverstone. Secured with surgical steel posts and butterfly earring back. Dimensions: L 9.8 cm x W 3 cm Weight: 12g (per single earring)" ,
     "price": "5000.00",
     "stock": 10,
     "image": [necklace1,necklace1alt,necklace1model],
@@ -268,13 +269,22 @@ const Product = () => {
             <div className="product-details">
               <div className='product-page-details-top-contaier'>
                 <p className="product-title">{product.name}</p>
+                <p className="product-description-title">DESCRIPTION</p>
                 <p className="product-description">{product.description}</p>
-                <p className="product-description">{product.price} EGP</p>
+                <p className="product-description-material">MATERIAL</p>
+                <p className="product-material-description">Brass dipped in 24k gold with a matte finish.</p>
+               <div className='quality-container'>
+               <p className="product-quality">QUALITY STATEMENT</p>
+               <img src={quality} />
+               </div>
+                <p className="product-quality-description">Each piece of Mojar jewelry is meticulously crafted and assembled in our studio, using the finest diamonds and gold. To ensure your jewelry maintains its luxurious appearance every time you wear it, make sure you follow our expert's care tips.</p>
               </div>
-              <div className='add-to-basket-container'>
-                    <p className='add-to-basket-text' onClick={toggleCart}>ADD TO BASKET</p>
-                    <FontAwesomeIcon onClick={toggleWish} icon={faHeart} className="favorite-icon" />
+              <div className='add-to-basket-container1'>
+
+                    <button className='add-to-basket-text' onClick={toggleCart}>ADD TO CART</button>
+                    <FontAwesomeIcon onClick={toggleWish} icon={faHeart} className="favorite-icon1" />
                 </div>
+                <button className='contact-us' >CONTACT US</button>
             </div>
           </div>
         </div>
@@ -295,7 +305,7 @@ const Product = () => {
       )
     
     
-  );
+  );  
 };
 
 export default Product;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-
+import {faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import './ProductsPage.css'
 const ProductBox = ({ product, toggleWish, toggleCart }) => {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
@@ -24,7 +24,7 @@ const ProductBox = ({ product, toggleWish, toggleCart }) => {
       className="product-box"
     >
       <div className='image-container' onClick={handleNavigate}>
-        <img src={product.image[0]} alt={product.name} className="product-image" />
+        <img src={product.image[0]} alt={product.name} className="product-image1"  />
         {isHovered && (
           <img
             src={product.image[1]} // Use product.image1 for the overlay image
@@ -39,8 +39,12 @@ const ProductBox = ({ product, toggleWish, toggleCart }) => {
           <p>{product.description}</p>
           <p>{product.price} EGP</p>
           <div className='add-to-basket-container'>
-            <p className='add-to-basket-text' onClick={toggleCart}>ADD TO BASKET</p>
-            <FontAwesomeIcon onClick={toggleWish} icon={faHeart} className="favorite-icon" />
+            <p className='add-to-basket' onClick={toggleCart}>ADD TO BASKET</p>
+            <FontAwesomeIcon
+              onClick={toggleWish}
+              icon={solidHeart}
+              className="favorite-icon"
+            />
           </div>
         </div>
       </div>
